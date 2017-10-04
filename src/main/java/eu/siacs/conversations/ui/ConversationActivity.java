@@ -1229,6 +1229,9 @@ public class ConversationActivity extends XmppActivity
 		final Intent intent = getIntent();
 
 		if (xmppConnectionService.getAccounts().size() == 0) {
+
+			//No accounts configured
+
 			if (mRedirected.compareAndSet(false, true)) {
 				if (Config.X509_VERIFICATION) {
 					startActivity(new Intent(this, ManageAccountActivity.class));
