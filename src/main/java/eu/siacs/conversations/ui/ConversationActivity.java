@@ -1215,6 +1215,8 @@ public class ConversationActivity extends XmppActivity
 
 	@Override
 	void onBackendConnected() {
+		//CHECK
+
 		this.xmppConnectionService.getNotificationService().setIsInForeground(true);
 		updateConversationList();
 

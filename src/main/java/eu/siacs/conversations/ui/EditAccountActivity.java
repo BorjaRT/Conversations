@@ -128,6 +128,9 @@ public class EditAccountActivity extends OmemoActivity implements OnAccountUpdat
 
 		@Override
 		public void onClick(final View v) {
+
+			//CHECK
+
 			final String password = mPassword.getText().toString();
 			final String passwordConfirm = mPasswordConfirm.getText().toString();
 			final boolean wasDisabled = mAccount != null && mAccount.getStatus() == Account.State.DISABLED;
