@@ -394,6 +394,9 @@ public class ConversationActivity extends XmppActivity
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+
+		//CHECK
+
 		getMenuInflater().inflate(R.menu.conversations, menu);
 		final MenuItem menuSecure = menu.findItem(R.id.action_security);
 		final MenuItem menuArchive = menu.findItem(R.id.action_archive);
@@ -405,6 +408,14 @@ public class ConversationActivity extends XmppActivity
 		final MenuItem menuInviteContact = menu.findItem(R.id.action_invite);
 		final MenuItem menuMute = menu.findItem(R.id.action_mute);
 		final MenuItem menuUnmute = menu.findItem(R.id.action_unmute);
+
+        final MenuItem menuManageAccounts = menu.findItem(R.id.action_accounts);
+
+        if(Config.ACCESS_ACCOUNT_MANAGEMENT){
+            menuManageAccounts.setVisible(true);
+        }else{
+            menuManageAccounts.setVisible(false);
+        }
 
 		if (isConversationsOverviewVisable() && isConversationsOverviewHideable()) {
 			menuArchive.setVisible(false);

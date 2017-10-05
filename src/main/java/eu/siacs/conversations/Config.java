@@ -151,6 +151,9 @@ public final class Config {
 		"_MD5",
 	};
 
+	public static final boolean ADD_ACCOUNT_ENABLED = false;
+    public static final boolean ACCESS_ACCOUNT_MANAGEMENT = true;
+
 	private Config() {
 	}
 }

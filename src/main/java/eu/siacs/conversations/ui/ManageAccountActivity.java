@@ -158,23 +158,37 @@ public class ManageAccountActivity extends XmppActivity implements OnAccountUpda
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+
+        //CHECK
+
 		getMenuInflater().inflate(R.menu.manageaccounts, menu);
 		MenuItem enableAll = menu.findItem(R.id.action_enable_all);
 		MenuItem addAccount = menu.findItem(R.id.action_add_account);
 		MenuItem addAccountWithCertificate = menu.findItem(R.id.action_add_account_with_cert);
+        MenuItem disableAll = menu.findItem(R.id.action_disable_all);
 
-		if (Config.X509_VERIFICATION) {
-			addAccount.setVisible(false);
-			addAccountWithCertificate.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-		}
+		if(Config.ADD_ACCOUNT_ENABLED){
+            addAccount.setVisible(true);
+            if (Config.X509_VERIFICATION) {
+                addAccount.setVisible(false);
+                addAccountWithCertificate.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+            }
 
-		if (!accountsLeftToEnable()) {
-			enableAll.setVisible(false);
-		}
-		MenuItem disableAll = menu.findItem(R.id.action_disable_all);
-		if (!accountsLeftToDisable()) {
-			disableAll.setVisible(false);
-		}
+            if (!accountsLeftToEnable()) {
+                enableAll.setVisible(false);
+            }
+
+            if (!accountsLeftToDisable()) {
+                disableAll.setVisible(false);
+            }
+        }else{
+            addAccount.setVisible(false);
+            addAccountWithCertificate.setVisible(false);
+            enableAll.setVisible(false);
+            disableAll.setVisible(false);
+        }
+
+
 		return true;
 	}
 

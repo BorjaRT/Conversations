@@ -358,6 +358,10 @@ public abstract class XmppActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(final MenuItem item) {
+
+		//CHECK
+
+
 		switch (item.getItemId()) {
 			case R.id.action_settings:
 				startActivity(new Intent(this, SettingsActivity.class));
