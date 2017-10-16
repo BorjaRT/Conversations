@@ -46,7 +46,7 @@
                         android:id="@+id/account_jid_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/account_settings_jabber_id"
+                        android:text="@string/tv_user_id"
                         android:textColor="?attr/color_text_primary"
                         android:textSize="?attr/TextSizeBody"/>
 
@@ -54,8 +54,8 @@
                         android:id="@+id/account_jid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/account_settings_example_jabber_id"
-                        android:inputType="textEmailAddress"
+                        android:hint="@string/tv_user_id"
+                        android:inputType="textNoSuggestions"
                         android:textColor="?attr/color_text_primary"
                         android:textColorHint="?attr/color_text_secondary"
                         android:textSize="?attr/TextSizeBody"/>
@@ -130,14 +130,14 @@
                                 android:textSize="?attr/TextSizeBody"/>
                         </LinearLayout>
                     </LinearLayout>
-                    <CheckBox
-                        android:id="@+id/account_register_new"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/register_account"
-                        android:textColor="?attr/color_text_primary"
-                        android:textSize="?attr/TextSizeBody"/>
+                    <!--<CheckBox-->
+                        <!--android:id="@+id/account_register_new"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--android:text="@string/register_account"-->
+                        <!--android:textColor="?attr/color_text_primary"-->
+                        <!--android:textSize="?attr/TextSizeBody"/>-->
 
                     <TextView
                         android:id="@+id/account_confirm_password_desc"
@@ -680,30 +680,30 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true">
 
-        <Button
-            android:id="@+id/cancel_button"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/cancel"
-            android:textColor="?attr/color_text_primary"/>
+        <!--<Button-->
+            <!--android:id="@+id/cancel_button"-->
+            <!--style="?android:attr/borderlessButtonStyle"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/cancel"-->
+            <!--android:textColor="?attr/color_text_primary"/>-->
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="fill_parent"
-            android:layout_marginBottom="7dp"
-            android:layout_marginTop="7dp"
-            android:background="?attr/divider"/>
+        <!--<View-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_marginBottom="7dp"-->
+            <!--android:layout_marginTop="7dp"-->
+            <!--android:background="?attr/divider"/>-->
 
         <Button
-            android:id="@+id/save_button"
+            android:id="@+id/btn_start"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/save"
+            android:text="@string/btn_start_text"
             android:textColor="?attr/color_text_secondary"/>
     </LinearLayout>
 
