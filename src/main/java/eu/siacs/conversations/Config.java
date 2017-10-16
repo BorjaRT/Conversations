@@ -161,6 +161,7 @@ public final class Config {
     public static final boolean CONFIG_GROUP_ATTACHMENTS_ENABLED = true;
     public static final boolean CONFIG_GROUP_SCREEN_ENABLED = true;
     public static final boolean CONFIG_GROUP_ADVANCED_ENABLED = true;
+    public static final boolean CONFIG_ABOUT_ENABLED = true;
 
     //AJUSTES GENERAL
     public static final boolean CONFIG_PRESENCE_UPDATES_ENABLED = true;
@@ -198,7 +199,6 @@ public final class Config {
     //AJUSTES AVANZADO
     public static final boolean CONFIG_EXPERT_OPTIONS_ENABLED = true;
     public static final boolean CONFIG_SEND_ERRORS_ENABLED = true;
-    public static final boolean CONFIG_ABOUT_ENABLED = true;
 
 	private Config() {
 	}
