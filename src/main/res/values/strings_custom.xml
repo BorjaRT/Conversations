@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_login">Iniciar sesión</string>
+    <string name="tv_user_id">Nombre de usuario</string>
+    <string name="btn_start_text">Iniciar</string>
+</resources>

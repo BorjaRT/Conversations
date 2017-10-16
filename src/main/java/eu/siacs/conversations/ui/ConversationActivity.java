@@ -73,6 +73,8 @@ import eu.siacs.conversations.xmpp.jid.Jid;
 public class ConversationActivity extends XmppActivity
 	implements OnAccountUpdate, OnConversationUpdate, OnRosterUpdate, OnUpdateBlocklist, XmppConnectionService.OnShowErrorToast {
 
+    public static final String INTENT_EXTRA_INIT_MODE = "init";
+
 	public static final String RECENTLY_USED_QUICK_ACTION = "recently_used_quick_action";
 
 	public static final String ACTION_VIEW_CONVERSATION = "eu.siacs.conversations.action.VIEW";
@@ -777,7 +779,7 @@ public class ConversationActivity extends XmppActivity
 				setSelectedConversation(null);
 				if (mRedirected.compareAndSet(false, true)) {
 					Intent intent = new Intent(this, StartConversationActivity.class);
-					intent.putExtra("init", true);
+					intent.putExtra(INTENT_EXTRA_INIT_MODE, true);
 					startActivity(intent);
 					finish();
 				}
@@ -1216,7 +1218,7 @@ public class ConversationActivity extends XmppActivity
 		Account pendingAccount = xmppConnectionService.getPendingAccount();
 		if (pendingAccount == null) {
 			Intent startConversationActivity = new Intent(this, StartConversationActivity.class);
-			startConversationActivity.putExtra("init", true);
+			startConversationActivity.putExtra(INTENT_EXTRA_INIT_MODE, true);
 			startActivity(startConversationActivity);
 		} else {
 			switchToAccount(pendingAccount, true);
@@ -1226,6 +1228,8 @@ public class ConversationActivity extends XmppActivity
 
 	@Override
 	void onBackendConnected() {
+		//CHECK
+
 		this.xmppConnectionService.getNotificationService().setIsInForeground(true);
 		updateConversationList();
 
@@ -1240,14 +1244,23 @@ public class ConversationActivity extends XmppActivity
 		final Intent intent = getIntent();
 
 		if (xmppConnectionService.getAccounts().size() == 0) {
+
+			//No accounts configured
+
 			if (mRedirected.compareAndSet(false, true)) {
 				if (Config.X509_VERIFICATION) {
 					startActivity(new Intent(this, ManageAccountActivity.class));
 				} else if (Config.MAGIC_CREATE_DOMAIN != null) {
-					startActivity(new Intent(this, WelcomeActivity.class));
+//					startActivity(new Intent(this, WelcomeActivity.class));
+                    
+//                    startActivity(new Intent(this, EditAccountActivity.class));
+//                    startActivity(new Intent(this, LoginActivity.class));
+					Intent loginIntent = new Intent(this, LoginActivity.class);
+					loginIntent.putExtra(INTENT_EXTRA_INIT_MODE,true);
+					startActivity(loginIntent);
 				} else {
 					Intent editAccount = new Intent(this, EditAccountActivity.class);
-					editAccount.putExtra("init",true);
+					editAccount.putExtra(INTENT_EXTRA_INIT_MODE,true);
 					startActivity(editAccount);
 				}
 				finish();
