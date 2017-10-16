@@ -154,6 +154,52 @@ public final class Config {
 	public static final boolean ADD_ACCOUNT_ENABLED = false;
     public static final boolean ACCESS_ACCOUNT_MANAGEMENT = true;
 
+    //AJUSTES
+    public static final boolean CONFIG_GROUP_GENERAL_ENABLED = true;
+    public static final boolean CONFIG_GROUP_PRIVACY_ENABLED = true;
+    public static final boolean CONFIG_GROUP_NOTIFICATIONS_ENABLED = true;
+    public static final boolean CONFIG_GROUP_ATTACHMENTS_ENABLED = true;
+    public static final boolean CONFIG_GROUP_SCREEN_ENABLED = true;
+    public static final boolean CONFIG_GROUP_ADVANCED_ENABLED = true;
+
+    //AJUSTES GENERAL
+    public static final boolean CONFIG_PRESENCE_UPDATES_ENABLED = true;
+    public static final boolean CONFIG_RESOURCE_ENABLED = true;
+
+    //AJUSTES PRIVACIDAD
+    public static final boolean CONFIG_CONFIRM_MESSAGES_ENABLED = true;
+    public static final boolean CONFIG_CHAT_STATES_ENABLED = true;
+    public static final boolean CONFIG_BROADCAST_ACTIVITY_ENABLED = true;
+
+    //AJUSTES NOTIFICACIONES
+    public static final boolean CONFIG_NOTIFICATIONS_ENABLED = true;
+    public static final boolean CONFIG_NOTIFICATIONS_STRANGERS = true;
+    public static final boolean CONFIG_NOTIFICATIONS_HEADSUP_ENABLED = true;
+    public static final boolean CONFIG_VIBRATION_ENABLED = true;
+    public static final boolean CONFIG_LIGHT_ENABLED = true;
+    public static final boolean CONFIG_SOUND_ENABLED = true;
+    public static final boolean CONFIG_SILENCE_ENABLED = true;
+    public static final boolean CONFIG_GRACE_PERIOD_ENABLED = true;
+
+    //AJUSTES ADJUNTOS
+    public static final boolean CONFIG_FILES_ENABLED = true;
+    public static final boolean CONFIG_COMPRESSION_ENABLED = true;
+    public static final boolean CONFIG_QUICK_SHARE_ENABLED = true;
+
+    //AJUSTES PANTALLA
+    public static final boolean CONFIG_THEME_ENABLED = true;
+    public static final boolean CONFIG_NAME_IN_GROUP_ENABLED = true;
+    public static final boolean CONFIG_GREEN_BACKGROUND_ENABLED = true;
+    public static final boolean CONFIG_FONT_SIZE_ENABLED = true;
+    public static final boolean CONFIG_SEND_INDICATE_sTATUS_ENABLED = true;
+    public static final boolean CONFIG_QUICK_ACTION_ENABLED = true;
+    public static final boolean CONFIG_DINAMIC_TAGS_ENABLED = true;
+
+    //AJUSTES AVANZADO
+    public static final boolean CONFIG_EXPERT_OPTIONS_ENABLED = true;
+    public static final boolean CONFIG_SEND_ERRORS_ENABLED = true;
+    public static final boolean CONFIG_ABOUT_ENABLED = true;
+
 	private Config() {
 	}
 }
