@@ -192,12 +192,44 @@ public final class Config {
     public static final boolean CONFIG_NAME_IN_GROUP_ENABLED = true;
     public static final boolean CONFIG_GREEN_BACKGROUND_ENABLED = true;
     public static final boolean CONFIG_FONT_SIZE_ENABLED = true;
-    public static final boolean CONFIG_SEND_INDICATE_sTATUS_ENABLED = true;
+    public static final boolean CONFIG_SEND_INDICATE_STATUS_ENABLED = true;
     public static final boolean CONFIG_QUICK_ACTION_ENABLED = true;
     public static final boolean CONFIG_DINAMIC_TAGS_ENABLED = true;
 
     //AJUSTES AVANZADO
     public static final boolean CONFIG_EXPERT_OPTIONS_ENABLED = true;
+
+	public static final boolean CONFIG_SUB_SECURITY_ENABLED = true;
+	public static final boolean CONFIG_BLIND_TRUST_ENABLED = true;
+	public static final boolean CONFIG_AUTO_MESSAGE_DELETION_ENABLED = true;
+	public static final boolean CONFIG_DONT_TRUST_CAS_ENABLED = true;
+	public static final boolean CONFIG_VALIDATE_HOSTNAME_ENABLED = true;
+	public static final boolean CONFIG_REMOVE_CERT_ENABLED = true;
+	public static final boolean CONFIG_MESSAGE_CORRECTION_ENABLED = true;
+	public static final boolean CONFIG_CLEAN_CACHE_ENABLED = true;
+	public static final boolean CONFIG_PRIVATE_STORAGE_ENABLED = true;
+	public static final boolean CONFIG_DELETE_OMEMO_ENABLED = false;
+
+	public static final boolean CONFIG_SUB_CONNECTION_ENABLED = true;
+	public static final boolean CONFIG_USE_TOR_ENABLED = true;
+	public static final boolean CONFIG_CONNECTION_OPTIONS_ENABLED = true;
+
+	public static final boolean CONFIG_SUB_INPUT_ENABLED = true;
+	public static final boolean CONFIG_ENTER_SEND_ENABLED = true;
+	public static final boolean CONFIG_DISPLAY_ENTER_ENABLED = true;
+
+	public static final boolean CONFIG_SUB_PRESENCE_ENABLED = true;
+	public static final boolean CONFIG_MANUAL_PRESENCE_ENABLED = true;
+	public static final boolean CONFIG_AWAY_SCREEN_OFF_ENABLED = true;
+	public static final boolean CONFIG_DND_SILENT_ENABLED = true;
+	public static final boolean CONFIG_VIBRATE_SILENT_ENABLED = true;
+
+	public static final boolean CONFIG_SUB_OTHER_ENABLED = true;
+	public static final boolean CONFIG_AUTOJOIN_ENABLED = true;
+	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = true;
+	public static final boolean CONFIG_FOREGROUND_SERVICE_ENABLED = true;
+	public static final boolean CONFIG_EXPORT_LOGS_ENABLED = true;
+
     public static final boolean CONFIG_SEND_ERRORS_ENABLED = true;
 
 	private Config() {

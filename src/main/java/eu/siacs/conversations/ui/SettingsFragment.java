@@ -203,7 +203,7 @@ public class SettingsFragment extends PreferenceFragment {
                 checkBoxPreference = (CheckBoxPreference) findPreference("use_larger_font");
                 preferenceCategory.removePreference(checkBoxPreference);
             }
-            if(!Config.CONFIG_SEND_INDICATE_sTATUS_ENABLED){
+            if(!Config.CONFIG_SEND_INDICATE_STATUS_ENABLED){
                 checkBoxPreference = (CheckBoxPreference) findPreference("send_button_status");
                 preferenceCategory.removePreference(checkBoxPreference);
             }
@@ -223,10 +223,122 @@ public class SettingsFragment extends PreferenceFragment {
         if(!Config.CONFIG_GROUP_ADVANCED_ENABLED){
             getPreferenceScreen().removePreference(preferenceCategory);
         }else {
-//            if (!Config.CONFIG_EXPERT_OPTIONS_ENABLED) {
-//                checkBoxPreference = (CheckBoxPreference) findPreference("grant_new_contacts");
-//                preferenceCategory.removePreference(checkBoxPreference);
-//            }
+            PreferenceScreen advancedPreferences = (PreferenceScreen) preferenceCategory.findPreference("expert");
+            PreferenceCategory prefSecurity = (PreferenceCategory) advancedPreferences.findPreference("security_options"),
+                    prefConnection = (PreferenceCategory)advancedPreferences.findPreference("connection_options"),
+                    prefInput = (PreferenceCategory)advancedPreferences.findPreference("input_options"),
+                    prefPresence = (PreferenceCategory)advancedPreferences.findPreference("presence_options"),
+                    prefOther = (PreferenceCategory)advancedPreferences.findPreference("other_options");
+
+            if(!Config.CONFIG_SUB_SECURITY_ENABLED){
+                advancedPreferences.removePreference(prefSecurity);
+            }else{
+                if(!Config.CONFIG_BLIND_TRUST_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("btbv");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_AUTO_MESSAGE_DELETION_ENABLED){
+                    listPreference = (ListPreference) advancedPreferences.findPreference("automatic_message_deletion");
+                    prefSecurity.removePreference(listPreference);
+                }
+                if(!Config.CONFIG_DONT_TRUST_CAS_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("dont_trust_system_cas");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_VALIDATE_HOSTNAME_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("validate_hostname");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_REMOVE_CERT_ENABLED){
+                    preference = advancedPreferences.findPreference("remove_trusted_certificates");
+                    prefSecurity.removePreference(preference);
+                }
+                if(!Config.CONFIG_MESSAGE_CORRECTION_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("allow_message_correction");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_CLEAN_CACHE_ENABLED){
+                    preference = advancedPreferences.findPreference("clean_cache");
+                    prefSecurity.removePreference(preference);
+                }
+                if(!Config.CONFIG_PRIVATE_STORAGE_ENABLED){
+                    preference = advancedPreferences.findPreference("clean_private_storage");
+                    prefSecurity.removePreference(preference);
+                }
+                if(!Config.CONFIG_DELETE_OMEMO_ENABLED){
+                    preference = advancedPreferences.findPreference("delete_omemo_identities");
+                    prefSecurity.removePreference(preference);
+                }
+            }
+
+            if(!Config.CONFIG_SUB_CONNECTION_ENABLED){
+                advancedPreferences.removePreference(prefConnection);
+            }else{
+                if(!Config.CONFIG_USE_TOR_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("use_tor");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_CONNECTION_OPTIONS_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("show_connection_options");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+            }
+
+            if(!Config.CONFIG_SUB_INPUT_ENABLED){
+                advancedPreferences.removePreference(prefInput);
+            }else{
+                if(!Config.CONFIG_ENTER_SEND_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("enter_is_send");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_DISPLAY_ENTER_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("display_enter_key");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+            }
+
+            if(!Config.CONFIG_SUB_PRESENCE_ENABLED){
+                advancedPreferences.removePreference(prefPresence);
+            }else{
+                if(!Config.CONFIG_MANUAL_PRESENCE_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("manually_change_presence");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_AWAY_SCREEN_OFF_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("away_when_screen_off");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_DND_SILENT_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("dnd_on_silent_mode");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_VIBRATE_SILENT_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("treat_vibrate_as_silent");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+            }
+
+            if(!Config.CONFIG_SUB_OTHER_ENABLED ){
+                advancedPreferences.removePreference(prefOther);
+            }else{
+                if(!Config.CONFIG_AUTOJOIN_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("autojoin");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_INDICATE_RECEIVED_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("indicate_received");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_FOREGROUND_SERVICE_ENABLED){
+                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference("enable_foreground_service");
+                    prefSecurity.removePreference(checkBoxPreference);
+                }
+                if(!Config.CONFIG_EXPORT_LOGS_ENABLED){
+                    preference = advancedPreferences.findPreference("export_logs");
+                    prefSecurity.removePreference(preference);
+                }
+            }
+
             if (!Config.CONFIG_SEND_ERRORS_ENABLED) {
                 checkBoxPreference = (CheckBoxPreference) findPreference("never_send");
                 preferenceCategory.removePreference(checkBoxPreference);

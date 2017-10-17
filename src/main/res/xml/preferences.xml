@@ -185,7 +185,8 @@
             android:key="expert"
             android:summary="@string/pref_expert_options_summary"
             android:title="@string/pref_expert_options">
-            <PreferenceCategory android:title="@string/pref_security_settings"
+            <PreferenceCategory
+                android:title="@string/pref_security_settings"
                 android:key="security_options">
                 <CheckBoxPreference
                     android:defaultValue="@bool/btbv"
@@ -245,7 +246,9 @@
                     android:summary="@string/pref_show_connection_options_summary"
                     android:title="@string/pref_show_connection_options"/>
             </PreferenceCategory>
-            <PreferenceCategory android:title="@string/pref_input_options">
+            <PreferenceCategory
+                android:key="input_options"
+                android:title="@string/pref_input_options">
                 <CheckBoxPreference
                     android:defaultValue="@bool/enter_is_send"
                     android:key="enter_is_send"
@@ -257,7 +260,9 @@
                     android:summary="@string/pref_display_enter_key_summary"
                     android:title="@string/pref_display_enter_key"/>
             </PreferenceCategory>
-            <PreferenceCategory android:title="@string/pref_presence_settings">
+            <PreferenceCategory
+                android:key="presence_options"
+                android:title="@string/pref_presence_settings">
                 <CheckBoxPreference
                     android:defaultValue="@bool/manually_change_presence"
                     android:key="manually_change_presence"
@@ -283,7 +288,9 @@
                     android:title="@string/pref_treat_vibrate_as_silent"
                     android:summary="@string/pref_treat_vibrate_as_dnd_summary"/>
             </PreferenceCategory>
-            <PreferenceCategory android:title="@string/pref_expert_options_other">
+            <PreferenceCategory
+                android:key="other_options"
+                android:title="@string/pref_expert_options_other">
                 <CheckBoxPreference
                     android:key="autojoin"
                     android:defaultValue="@bool/autojoin"
