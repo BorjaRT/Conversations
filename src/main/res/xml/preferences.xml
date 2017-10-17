@@ -2,7 +2,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="?attr/color_background_secondary">
 
-    <PreferenceCategory android:title="@string/pref_general">
+    <PreferenceCategory
+        android:key="general"
+        android:title="@string/pref_general">
         <CheckBoxPreference
             android:defaultValue="@bool/grant_new_contacts"
             android:key="grant_new_contacts"
@@ -17,7 +19,9 @@
             android:summary="@string/pref_xmpp_resource_summary"
             android:title="@string/pref_xmpp_resource"/>
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_privacy">
+    <PreferenceCategory
+        android:key="privacy"
+        android:title="@string/pref_privacy">
         <CheckBoxPreference
             android:defaultValue="@bool/confirm_messages"
             android:key="confirm_messages"
@@ -35,7 +39,9 @@
             android:title="@string/pref_broadcast_last_activity"
             android:summary="@string/pref_broadcast_last_activity_summary"/>
         </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_notification_settings">
+    <PreferenceCategory
+        android:key="notifications"
+        android:title="@string/pref_notification_settings">
         <CheckBoxPreference
             android:defaultValue="@bool/show_notification"
             android:key="show_notification"
@@ -105,7 +111,9 @@
             android:entryValues="@array/grace_periods_values"
             />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_attachments">
+    <PreferenceCategory
+        android:key="attachments"
+        android:title="@string/pref_attachments">
         <ListPreference
             android:defaultValue="@integer/auto_accept_filesize"
             android:entries="@array/filesizes"
@@ -126,7 +134,9 @@
             android:title="@string/pref_return_to_previous"
             android:summary="@string/pref_return_to_previous_summary"/>
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_ui_options">
+    <PreferenceCategory
+        android:key="ui"
+        android:title="@string/pref_ui_options">
         <ListPreference
             android:defaultValue="@string/theme"
             android:entries="@array/themes"
@@ -175,7 +185,8 @@
             android:key="expert"
             android:summary="@string/pref_expert_options_summary"
             android:title="@string/pref_expert_options">
-            <PreferenceCategory android:title="@string/pref_security_settings"
+            <PreferenceCategory
+                android:title="@string/pref_security_settings"
                 android:key="security_options">
                 <CheckBoxPreference
                     android:defaultValue="@bool/btbv"
@@ -235,7 +246,9 @@
                     android:summary="@string/pref_show_connection_options_summary"
                     android:title="@string/pref_show_connection_options"/>
             </PreferenceCategory>
-            <PreferenceCategory android:title="@string/pref_input_options">
+            <PreferenceCategory
+                android:key="input_options"
+                android:title="@string/pref_input_options">
                 <CheckBoxPreference
                     android:defaultValue="@bool/enter_is_send"
                     android:key="enter_is_send"
@@ -247,7 +260,9 @@
                     android:summary="@string/pref_display_enter_key_summary"
                     android:title="@string/pref_display_enter_key"/>
             </PreferenceCategory>
-            <PreferenceCategory android:title="@string/pref_presence_settings">
+            <PreferenceCategory
+                android:key="presence_options"
+                android:title="@string/pref_presence_settings">
                 <CheckBoxPreference
                     android:defaultValue="@bool/manually_change_presence"
                     android:key="manually_change_presence"
@@ -273,7 +288,9 @@
                     android:title="@string/pref_treat_vibrate_as_silent"
                     android:summary="@string/pref_treat_vibrate_as_dnd_summary"/>
             </PreferenceCategory>
-            <PreferenceCategory android:title="@string/pref_expert_options_other">
+            <PreferenceCategory
+                android:key="other_options"
+                android:title="@string/pref_expert_options_other">
                 <CheckBoxPreference
                     android:key="autojoin"
                     android:defaultValue="@bool/autojoin"
@@ -304,6 +321,7 @@
             android:title="@string/pref_never_send_crash"/>
     </PreferenceCategory>
     <eu.siacs.conversations.ui.AboutPreference
+        android:key = "about"
         android:summary="@string/pref_about_conversations_summary"
         android:title="@string/title_activity_about"/>
 </PreferenceScreen>
