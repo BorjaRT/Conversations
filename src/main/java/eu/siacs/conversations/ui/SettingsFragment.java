@@ -57,7 +57,6 @@ public class SettingsFragment extends PreferenceFragment {
 
 		// Load the preferences from an XML resource
 		addPreferencesFromResource(R.xml.preferences);
-//		checkEnabledPreferences();
 
 		// Remove from standard preferences if the flag ONLY_INTERNAL_STORAGE is not true
 		if (!Config.ONLY_INTERNAL_STORAGE) {
@@ -216,8 +215,6 @@ public class SettingsFragment extends PreferenceFragment {
                 preferenceCategory.removePreference(checkBoxPreference);
             }
         }
-
-        //TODO Avanzadas
 
         preferenceCategory = (PreferenceCategory) findPreference("advanced");
         if(!Config.CONFIG_GROUP_ADVANCED_ENABLED){
