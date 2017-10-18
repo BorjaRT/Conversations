@@ -203,8 +203,6 @@ public final class Config {
     public static final boolean CONFIG_DINAMIC_TAGS_ENABLED = true;
 
     //AJUSTES AVANZADO
-    public static final boolean CONFIG_EXPERT_OPTIONS_ENABLED = true;
-
 	public static final boolean CONFIG_SUB_SECURITY_ENABLED = true;
 	public static final boolean CONFIG_BLIND_TRUST_ENABLED = true;
 	public static final boolean CONFIG_AUTO_MESSAGE_DELETION_ENABLED = true;
@@ -234,7 +232,7 @@ public final class Config {
 	public static final boolean CONFIG_AUTOJOIN_ENABLED = true;
 	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = true;
 	public static final boolean CONFIG_FOREGROUND_SERVICE_ENABLED = true;
-	public static final boolean CONFIG_EXPORT_LOGS_ENABLED = true;
+	public static final boolean CONFIG_EXPORT_LOGS_ENABLED = false;
 
     public static final boolean CONFIG_SEND_ERRORS_ENABLED = true;
 
