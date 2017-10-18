@@ -94,7 +94,7 @@ public class SettingsFragment extends PreferenceFragment {
         PreferenceScreen preferenceScreenHours;
         RingtonePreference ringtonePreference;
 
-        preferenceCategory = (PreferenceCategory) findPreference("general");
+        preferenceCategory = (PreferenceCategory) findPreference(getString(R.string.key_general));
         if(!Config.CONFIG_GROUP_GENERAL_ENABLED){
             getPreferenceScreen().removePreference(preferenceCategory);
         }else{
