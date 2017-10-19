@@ -2,11 +2,13 @@ package eu.siacs.conversations.application;
 
 import android.app.Application;
 
+import eu.siacs.conversations.entities.Account;
+
 public class CustomApplication extends Application {
 
     private static CustomApplication customApplication;
 
-    private String userPassword;
+    private static Account userAccount;
 
     public CustomApplication getInstance(){
         return this;
@@ -17,11 +19,11 @@ public class CustomApplication extends Application {
         super.onCreate();
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public static Account getUserAccount() {
+        return userAccount;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public static void setUserAccount(Account account) {
+        userAccount = account;
     }
 }
