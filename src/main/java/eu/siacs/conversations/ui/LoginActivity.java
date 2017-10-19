@@ -234,6 +234,7 @@ public class LoginActivity extends OmemoActivity implements XmppConnectionServic
                 mAccount.setOption(Account.OPTION_REGISTER, false);
 
                 xmppConnectionService.createAccount(mAccount);
+                xmppConnectionService.getCustomApplication().setUserAccount(mAccount);
             }
             mHostname.setError(null);
             mPort.setError(null);
