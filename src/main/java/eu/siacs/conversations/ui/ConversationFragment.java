@@ -958,6 +958,7 @@ public class ConversationFragment extends Fragment implements EditMessage.Keyboa
 			if (account != null) {
 				account.setOption(Account.OPTION_DISABLED, false);
 				activity.xmppConnectionService.updateAccount(account);
+				activity.xmppConnectionService.getCustomApplication().setUserAccount(account);
 			}
 		}
 	};

@@ -132,6 +132,8 @@ public class LoginActivity extends OmemoActivity implements XmppConnectionServic
                 mAccount.setOption(Account.OPTION_DISABLED, false);
                 if (!xmppConnectionService.updateAccount(mAccount)) {
                     Toast.makeText(LoginActivity.this, R.string.unable_to_update_account,Toast.LENGTH_SHORT).show();
+                }else{
+                    xmppConnectionService.getCustomApplication().setUserAccount(mAccount);
                 }
                 return;
             }
@@ -213,6 +215,8 @@ public class LoginActivity extends OmemoActivity implements XmppConnectionServic
                 if (!xmppConnectionService.updateAccount(mAccount)) {
                     Toast.makeText(LoginActivity.this,R.string.unable_to_update_account,Toast.LENGTH_SHORT).show();
                     return;
+                }else{
+                    xmppConnectionService.getCustomApplication().setUserAccount(mAccount);
                 }
             } else {
                 if (xmppConnectionService.findAccountByJid(jid) != null) {
@@ -1028,6 +1032,7 @@ public class LoginActivity extends OmemoActivity implements XmppConnectionServic
                 mAccount.setPgpSignId(0);
                 mAccount.unsetPgpSignature();
                 xmppConnectionService.databaseBackend.updateAccount(mAccount);
+                xmppConnectionService.getCustomApplication().setUserAccount(mAccount);
                 xmppConnectionService.sendPresence(mAccount);
                 refreshUiReal();
             }

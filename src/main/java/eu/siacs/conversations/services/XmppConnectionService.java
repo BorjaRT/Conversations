@@ -172,7 +172,15 @@ public class XmppConnectionService extends Service {
 	public DatabaseBackend databaseBackend;
     private CustomApplication customApplication;
 
-	private ContentObserver contactObserver = new ContentObserver(null) {
+    public CustomApplication getCustomApplication() {
+        return customApplication;
+    }
+
+    public void setCustomApplication(CustomApplication customApplication) {
+        this.customApplication = customApplication;
+    }
+
+    private ContentObserver contactObserver = new ContentObserver(null) {
 		@Override
 		public void onChange(boolean selfChange) {
 			super.onChange(selfChange);

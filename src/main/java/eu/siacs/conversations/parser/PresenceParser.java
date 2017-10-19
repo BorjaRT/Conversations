@@ -197,6 +197,7 @@ public class PresenceParser extends AbstractParser implements
 					if (avatar.owner.equals(account.getJid().toBareJid())) {
 						account.setAvatar(avatar.getFilename());
 						mXmppConnectionService.databaseBackend.updateAccount(account);
+						mXmppConnectionService.getCustomApplication().setUserAccount(account);
 						mXmppConnectionService.getAvatarService().clear(account);
 						mXmppConnectionService.updateConversationUi();
 						mXmppConnectionService.updateAccountUi();

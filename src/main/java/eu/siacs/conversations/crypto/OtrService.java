@@ -152,6 +152,7 @@ public class OtrService extends OtrCryptoEngineImpl implements OtrEngineHost {
 				this.keyPair = kg.genKeyPair();
 				this.saveKey();
 				mXmppConnectionService.databaseBackend.updateAccount(account);
+				mXmppConnectionService.getCustomApplication().setUserAccount(account);
 			} catch (NoSuchAlgorithmException e) {
 				Log.d(Config.LOGTAG,
 						"error generating key pair " + e.getMessage());
