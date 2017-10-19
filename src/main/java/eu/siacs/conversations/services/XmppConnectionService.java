@@ -68,6 +68,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import de.duenndns.ssl.MemorizingTrustManager;
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.R;
+import eu.siacs.conversations.application.CustomApplication;
 import eu.siacs.conversations.crypto.PgpDecryptionService;
 import eu.siacs.conversations.crypto.PgpEngine;
 import eu.siacs.conversations.crypto.axolotl.AxolotlService;
@@ -155,6 +156,7 @@ public class XmppConnectionService extends Service {
 	private static final String ACTION_MERGE_PHONE_CONTACTS = "merge_phone_contacts";
 	public static final String ACTION_GCM_TOKEN_REFRESH = "gcm_token_refresh";
 	public static final String ACTION_GCM_MESSAGE_RECEIVED = "gcm_message_received";
+
 	private final SerialSingleThreadExecutor mFileAddingExecutor = new SerialSingleThreadExecutor();
 	private final SerialSingleThreadExecutor mVideoCompressionExecutor = new SerialSingleThreadExecutor();
 	private final SerialSingleThreadExecutor mDatabaseExecutor = new SerialSingleThreadExecutor();
@@ -168,6 +170,8 @@ public class XmppConnectionService extends Service {
 	private long mLastActivity = 0;
 
 	public DatabaseBackend databaseBackend;
+    private CustomApplication customApplication;
+
 	private ContentObserver contactObserver = new ContentObserver(null) {
 		@Override
 		public void onChange(boolean selfChange) {
@@ -297,6 +301,7 @@ public class XmppConnectionService extends Service {
 			}
 			if (account.setOption(Account.OPTION_LOGGED_IN_SUCCESSFULLY,true)) {
 				databaseBackend.updateAccount(account);
+                customApplication.setUserAccount(account);
 			}
 			account.getRoster().clearPresences();
 			mJingleConnectionManager.cancelInTransmission();
@@ -326,6 +331,7 @@ public class XmppConnectionService extends Service {
 				}
 				if (account.setShowErrorNotification(true)) {
 					databaseBackend.updateAccount(account);
+                    customApplication.setUserAccount(account);
 				}
 				mMessageArchiveService.executePendingQueries(account);
 				if (connection != null && connection.getFeatures().csi()) {
@@ -367,6 +373,7 @@ public class XmppConnectionService extends Service {
 				}
 			} else if (account.getStatus() == Account.State.REGISTRATION_SUCCESSFUL) {
 				databaseBackend.updateAccount(account);
+                customApplication.setUserAccount(account);
 				reconnectAccount(account, true, false);
 			} else if (account.getStatus() != Account.State.CONNECTING && account.getStatus() != Account.State.NO_INTERNET) {
 				resetSendingToWaiting(account);
@@ -852,6 +859,7 @@ public class XmppConnectionService extends Service {
 			}
 			if (account.setShowErrorNotification(true)) {
 				databaseBackend.updateAccount(account);
+                customApplication.setUserAccount(account);
 			}
 		}
 		mNotificationService.updateErrorNotification();
@@ -863,6 +871,7 @@ public class XmppConnectionService extends Service {
 				Log.d(Config.LOGTAG,account.getJid().toBareJid()+": dismissing error notification");
 				if (account.setShowErrorNotification(false)) {
 					databaseBackend.updateAccount(account);
+                    customApplication.setUserAccount(account);
 				}
 			}
 		}
@@ -923,6 +932,7 @@ public class XmppConnectionService extends Service {
 		this.databaseBackend = DatabaseBackend.getInstance(getApplicationContext());
 		Log.d(Config.LOGTAG,"restoring accounts...");
 		this.accounts = databaseBackend.getAccounts();
+        customApplication = (CustomApplication) getApplication();
 
 		if (this.accounts.size() == 0 && Arrays.asList("Sony","Sony Ericsson").contains(Build.MANUFACTURER)) {
 			getPreferences().edit().putBoolean(SettingsActivity.KEEP_FOREGROUND_SERVICE,true).commit();
@@ -1127,6 +1137,7 @@ public class XmppConnectionService extends Service {
 		final Account account = message.getConversation().getAccount();
 		if (account.setShowErrorNotification(true)) {
 			databaseBackend.updateAccount(account);
+            customApplication.setUserAccount(account);
 			mNotificationService.updateErrorNotification();
 		}
 		final Conversation conversation = message.getConversation();
@@ -1745,6 +1756,7 @@ public class XmppConnectionService extends Service {
 	public void createAccount(final Account account) {
 		account.initAccountServices(this);
 		databaseBackend.createAccount(account);
+        customApplication.setUserAccount(account);
 		this.accounts.add(account);
 		this.reconnectAccountInBackground(account);
 		updateAccountUi();
@@ -1803,6 +1815,7 @@ public class XmppConnectionService extends Service {
 				account.setPrivateKeyAlias(alias);
 				account.setDisplayName(info.second);
 				databaseBackend.updateAccount(account);
+                customApplication.setUserAccount(account);
 				if (Config.X509_VERIFICATION) {
 					try {
 						getMemorizingTrustManager().getNonInteractive().checkClientTrusted(chain, "RSA");
@@ -1824,6 +1837,7 @@ public class XmppConnectionService extends Service {
 			account.setShowErrorNotification(true);
 			this.statusListener.onStatusChanged(account);
 			databaseBackend.updateAccount(account);
+            customApplication.setUserAccount(account);
 			reconnectAccountInBackground(account);
 			updateAccountUi();
 			getNotificationService().updateErrorNotification();
@@ -1844,6 +1858,7 @@ public class XmppConnectionService extends Service {
 					account.setPassword(newPassword);
 					account.setOption(Account.OPTION_MAGIC_CREATE, false);
 					databaseBackend.updateAccount(account);
+                    customApplication.setUserAccount(account);
 					callback.onPasswordChangeSucceeded();
 				} else {
 					callback.onPasswordChangeFailed();
@@ -2824,6 +2839,7 @@ public class XmppConnectionService extends Service {
 								if (account.setAvatar(avatar.getFilename())) {
 									getAvatarService().clear(account);
 									databaseBackend.updateAccount(account);
+                                    customApplication.setUserAccount(account);
 								}
 								Log.d(Config.LOGTAG,account.getJid().toBareJid()+": published avatar "+(avatar.size/1024)+"KiB");
 								if (callback != null) {
@@ -2931,6 +2947,7 @@ public class XmppConnectionService extends Service {
 							if (account.getJid().toBareJid().equals(avatar.owner)) {
 								if (account.setAvatar(avatar.getFilename())) {
 									databaseBackend.updateAccount(account);
+                                    customApplication.setUserAccount(account);
 								}
 								getAvatarService().clear(account);
 								updateConversationUi();
@@ -2992,6 +3009,7 @@ public class XmppConnectionService extends Service {
 									Log.d(Config.LOGTAG,account.getJid().toBareJid()+": had no avatar. replacing with vcard");
 									account.setAvatar(avatar.getFilename());
 									databaseBackend.updateAccount(account);
+                                    customApplication.setUserAccount(account);
 									getAvatarService().clear(account);
 									updateAccountUi();
 								} else {
@@ -3038,6 +3056,7 @@ public class XmppConnectionService extends Service {
 								if (fileBackend.isAvatarCached(avatar)) {
 									if (account.setAvatar(avatar.getFilename())) {
 										databaseBackend.updateAccount(account);
+                                        customApplication.setUserAccount(account);
 									}
 									getAvatarService().clear(account);
 									callback.success(avatar);
@@ -3827,6 +3846,7 @@ public class XmppConnectionService extends Service {
 		account.setPresenceStatus(status);
 		account.setPresenceStatusMessage(statusMessage);
 		databaseBackend.updateAccount(account);
+        customApplication.setUserAccount(account);
 		if (!account.isOptionSet(Account.OPTION_DISABLED) && send) {
 			sendPresence(account);
 		}

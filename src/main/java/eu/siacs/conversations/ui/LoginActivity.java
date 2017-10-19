@@ -426,12 +426,6 @@ public class LoginActivity extends OmemoActivity implements XmppConnectionServic
             } else {
                 XmppConnection connection = mAccount == null ? null : mAccount.getXmppConnection();
                 String url = connection != null && mAccount.getStatus() == Account.State.REGISTRATION_WEB ? connection.getWebRegistrationUrl() : null;
-
-//                if (url != null && mRegisterNew.isChecked()) {
-//                    this.btnStart.setText(R.string.open_website);
-//                } else {
-//                    this.btnStart.setText(R.string.next);
-//                }
             }
         }
     }
@@ -491,7 +485,6 @@ public class LoginActivity extends OmemoActivity implements XmppConnectionServic
         this.mPasswordConfirm = (EditText) findViewById(R.id.account_password_confirm);
         this.mAvatar = (ImageView) findViewById(R.id.avater);
         this.mAvatar.setOnClickListener(this.mAvatarClickListener);
-//        this.mRegisterNew = (CheckBox) findViewById(R.id.account_register_new);
         this.mStats = (LinearLayout) findViewById(R.id.stats);
         this.mOsOptimizations = (RelativeLayout) findViewById(R.id.os_optimization);
         this.mDisableOsOptimizationsButton = (Button) findViewById(R.id.os_optimization_disable);
