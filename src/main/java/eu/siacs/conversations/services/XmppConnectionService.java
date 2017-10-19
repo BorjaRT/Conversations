@@ -947,6 +947,11 @@ public class XmppConnectionService extends Service {
 			getPreferences().edit().putBoolean(SettingsActivity.KEEP_FOREGROUND_SERVICE,true).commit();
 			Log.d(Config.LOGTAG,Build.MANUFACTURER+" is on blacklist. enabling foreground service");
 		}
+        
+        List<Account> accountsForRemoval = databaseBackend.getAccounts();
+		for(Account account: accountsForRemoval){
+            databaseBackend.deleteAccount(account);
+        }
 
 		restoreFromDatabase();
 

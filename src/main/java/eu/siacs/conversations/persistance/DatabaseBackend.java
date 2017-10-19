@@ -739,10 +739,10 @@ public class DatabaseBackend extends SQLiteOpenHelper {
         return list;
     }
 
-//	public List<Account> getAccounts() {
-//		SQLiteDatabase db = this.getReadableDatabase();
-//		return getAccounts(db);
-//	}
+	public List<Account> getAccounts() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		return getAccounts(db);
+	}
 
     //TODO Sólo se usa en el método que actualiza la base de datos. Eliminar toda referencia a la tabla ACCOUNTS
 	private List<Account> getAccounts(SQLiteDatabase db) {
