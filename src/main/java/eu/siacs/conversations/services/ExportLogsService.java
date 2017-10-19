@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import eu.siacs.conversations.R;
+import eu.siacs.conversations.application.CustomApplication;
 import eu.siacs.conversations.entities.Account;
 import eu.siacs.conversations.entities.Conversation;
 import eu.siacs.conversations.entities.Message;
@@ -36,7 +37,8 @@ public class ExportLogsService extends Service {
 	@Override
 	public void onCreate() {
 		mDatabaseBackend = DatabaseBackend.getInstance(getBaseContext());
-		mAccounts = mDatabaseBackend.getAccounts();
+//		mAccounts = mDatabaseBackend.getAccounts();
+		mAccounts = mDatabaseBackend.getAccounts((CustomApplication) getApplication());
 	}
 
 	@Override

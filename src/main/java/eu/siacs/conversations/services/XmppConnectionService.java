@@ -939,8 +939,9 @@ public class XmppConnectionService extends Service {
 		Log.d(Config.LOGTAG,"initializing database...");
 		this.databaseBackend = DatabaseBackend.getInstance(getApplicationContext());
 		Log.d(Config.LOGTAG,"restoring accounts...");
-		this.accounts = databaseBackend.getAccounts();
         customApplication = (CustomApplication) getApplication();
+        this.accounts = databaseBackend.getAccounts(customApplication);
+//		this.accounts = databaseBackend.getAccounts();
 
 		if (this.accounts.size() == 0 && Arrays.asList("Sony","Sony Ericsson").contains(Build.MANUFACTURER)) {
 			getPreferences().edit().putBoolean(SettingsActivity.KEEP_FOREGROUND_SERVICE,true).commit();
