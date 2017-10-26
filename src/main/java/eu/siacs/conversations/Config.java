@@ -188,7 +188,7 @@ public final class Config {
     public static final boolean CONFIG_QUICK_SHARE_ENABLED = true;
 
     //AJUSTES PANTALLA
-    public static final boolean CONFIG_THEME_ENABLED = true;
+    public static final boolean CONFIG_THEME_ENABLED = false;
     public static final boolean CONFIG_NAME_IN_GROUP_ENABLED = true;
     public static final boolean CONFIG_GREEN_BACKGROUND_ENABLED = true;
     public static final boolean CONFIG_FONT_SIZE_ENABLED = true;

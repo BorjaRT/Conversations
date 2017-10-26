@@ -1044,7 +1044,8 @@ public abstract class XmppActivity extends Activity {
 	}
 
 	protected int findTheme() {
-		Boolean dark   = getPreferences().getString(SettingsActivity.THEME, getResources().getString(R.string.theme)).equals("dark");
+//		Boolean dark   = getPreferences().getString(SettingsActivity.THEME, getResources().getString(R.string.theme)).equals("dark");
+		Boolean dark   = true;
 		Boolean larger = getPreferences().getBoolean("use_larger_font", getResources().getBoolean(R.bool.use_larger_font));
 
 		if(dark) {
