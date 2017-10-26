@@ -117,11 +117,6 @@
             android:summary="@string/pref_theme_options_summary"
             android:title="@string/pref_theme_options"/>
         <CheckBoxPreference
-            android:defaultValue="@bool/use_subject"
-            android:key="@string/key_use_subject"
-            android:summary="@string/pref_conference_name_summary"
-            android:title="@string/pref_conference_name"/>
-        <CheckBoxPreference
             android:defaultValue="@bool/use_green_background"
             android:key="@string/key_use_green_background"
             android:summary="@string/pref_use_green_background_summary"

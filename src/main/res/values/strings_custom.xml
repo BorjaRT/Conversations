@@ -22,7 +22,6 @@
     <string translatable="false" name="key_picture_compression">picture_compression</string>
     <string translatable="false" name="key_ui">ui</string>
     <string translatable="false" name="key_theme">theme</string>
-    <string translatable="false" name="key_use_subject">use_subject</string>
     <string translatable="false" name="key_use_green_background">use_green_background</string>
     <string translatable="false" name="key_use_larger_font">use_larger_font</string>
     <string translatable="false" name="key_send_button_status">send_button_status</string>

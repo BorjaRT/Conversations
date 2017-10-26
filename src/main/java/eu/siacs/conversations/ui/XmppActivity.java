@@ -108,7 +108,7 @@ public abstract class XmppActivity extends Activity {
 	protected int mColorGreen;
 	protected int mPrimaryColor;
 
-	protected boolean mUseSubject = true;
+//	protected boolean mUseSubject = true;
 
 	private DisplayMetrics metrics;
 	protected int mTheme;
@@ -406,7 +406,7 @@ public abstract class XmppActivity extends Activity {
 		setTheme(this.mTheme);
 
 		this.mUsingEnterKey = usingEnterKey();
-		mUseSubject = getPreferences().getBoolean("use_subject", getResources().getBoolean(R.bool.use_subject));
+//		mUseSubject = getPreferences().getBoolean("use_subject", getResources().getBoolean(R.bool.use_subject));
 		final ActionBar ab = getActionBar();
 		if (ab!=null) {
 			ab.setDisplayHomeAsUpEnabled(true);
@@ -455,9 +455,9 @@ public abstract class XmppActivity extends Activity {
 			.getDefaultSharedPreferences(getApplicationContext());
 	}
 
-	public boolean useSubjectToIdentifyConference() {
-		return mUseSubject;
-	}
+//	public boolean useSubjectToIdentifyConference() {
+//		return mUseSubject;
+//	}
 
 	public void switchToConversation(Conversation conversation) {
 		switchToConversation(conversation, null, false);

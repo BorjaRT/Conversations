@@ -182,10 +182,6 @@ public class SettingsFragment extends PreferenceFragment {
                 listPreference = (ListPreference) findPreference(getString(R.string.key_theme));
                 preferenceCategory.removePreference(listPreference);
             }
-            if(!Config.CONFIG_NAME_IN_GROUP_ENABLED){
-                checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_use_subject));
-                preferenceCategory.removePreference(checkBoxPreference);
-            }
             if(!Config.CONFIG_GREEN_BACKGROUND_ENABLED){
                 checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_use_green_background));
                 preferenceCategory.removePreference(checkBoxPreference);
