@@ -991,7 +991,8 @@ public abstract class XmppActivity extends Activity {
 	}
 
 	protected boolean manuallyChangePresence() {
-		return getPreferences().getBoolean(SettingsActivity.MANUALLY_CHANGE_PRESENCE, getResources().getBoolean(R.bool.manually_change_presence));
+		return true;
+//		return getPreferences().getBoolean(SettingsActivity.MANUALLY_CHANGE_PRESENCE, getResources().getBoolean(R.bool.manually_change_presence));
 	}
 
 	protected void unregisterNdefPushMessageCallback() {

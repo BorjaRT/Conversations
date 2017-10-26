@@ -216,8 +216,8 @@ public final class Config {
 	public static final boolean CONFIG_ENTER_SEND_ENABLED = false;//OK
 	public static final boolean CONFIG_DISPLAY_ENTER_ENABLED = false;//OK
 
-	public static final boolean CONFIG_SUB_PRESENCE_ENABLED = true;
-	public static final boolean CONFIG_MANUAL_PRESENCE_ENABLED = true;
+	public static final boolean CONFIG_SUB_PRESENCE_ENABLED = false;//OK
+	public static final boolean CONFIG_MANUAL_PRESENCE_ENABLED = false;//OK
 	public static final boolean CONFIG_AWAY_SCREEN_OFF_ENABLED = false;//OK
 	public static final boolean CONFIG_DND_SILENT_ENABLED = false;//OK
 	public static final boolean CONFIG_VIBRATE_SILENT_ENABLED = false;//OK

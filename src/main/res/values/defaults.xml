@@ -33,7 +33,7 @@
     <bool name="use_tor">false</bool>
     <bool name="show_connection_options">false</bool>
     <bool name="display_enter_key">false</bool>
-    <bool name="manually_change_presence">false</bool>
+    <bool name="manually_change_presence">true</bool>
     <bool name="away_when_screen_off">false</bool>
     <bool name="autojoin">true</bool>
     <bool name="indicate_received">false</bool>
