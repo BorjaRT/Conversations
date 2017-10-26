@@ -222,7 +222,7 @@ public final class Config {
 
 	public static final boolean CONFIG_SUB_OTHER_ENABLED = true;
 	public static final boolean CONFIG_AUTOJOIN_ENABLED = true;
-	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = true;
+	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = false;
 	public static final boolean CONFIG_FOREGROUND_SERVICE_ENABLED = true;
 	public static final boolean CONFIG_EXPORT_LOGS_ENABLED = false;
 
