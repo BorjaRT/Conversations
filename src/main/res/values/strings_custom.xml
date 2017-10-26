@@ -20,7 +20,6 @@
     <string translatable="false" name="key_attachments">attachments</string>
     <string translatable="false" name="key_auto_accept_file_size">auto_accept_file_size</string>
     <string translatable="false" name="key_picture_compression">picture_compression</string>
-    <string translatable="false" name="key_return_to_previous">return_to_previous</string>
     <string translatable="false" name="key_ui">ui</string>
     <string translatable="false" name="key_theme">theme</string>
     <string translatable="false" name="key_use_subject">use_subject</string>

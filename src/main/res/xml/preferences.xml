@@ -105,11 +105,6 @@
             android:key="@string/key_picture_compression"
             android:summary="@string/pref_picture_compression_summary"
             android:title="@string/pref_picture_compression"/>
-        <CheckBoxPreference
-            android:defaultValue="@bool/return_to_previous"
-            android:key="@string/key_return_to_previous"
-            android:title="@string/pref_return_to_previous"
-            android:summary="@string/pref_return_to_previous_summary"/>
     </PreferenceCategory>
     <PreferenceCategory
         android:key="@string/key_ui"

@@ -172,10 +172,6 @@ public class SettingsFragment extends PreferenceFragment {
                 listPreference = (ListPreference) findPreference(getString(R.string.key_picture_compression));
                 preferenceCategory.removePreference(listPreference);
             }
-            if(!Config.CONFIG_QUICK_SHARE_ENABLED){
-                checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_return_to_previous));
-                preferenceCategory.removePreference(checkBoxPreference);
-            }
         }
 
         preferenceCategory = (PreferenceCategory) findPreference(getString(R.string.key_ui));

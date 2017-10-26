@@ -157,7 +157,7 @@ public final class Config {
     //AJUSTES
     public static final boolean CONFIG_GROUP_GENERAL_ENABLED = false;//OK
     public static final boolean CONFIG_GROUP_PRIVACY_ENABLED = false;//OK
-    public static final boolean CONFIG_GROUP_NOTIFICATIONS_ENABLED = true;
+    public static final boolean CONFIG_GROUP_NOTIFICATIONS_ENABLED = true;//OK
     public static final boolean CONFIG_GROUP_ATTACHMENTS_ENABLED = true;
     public static final boolean CONFIG_GROUP_SCREEN_ENABLED = true;
     public static final boolean CONFIG_GROUP_ADVANCED_ENABLED = true;
@@ -179,12 +179,11 @@ public final class Config {
     public static final boolean CONFIG_VIBRATION_ENABLED = true;//OK
     public static final boolean CONFIG_LIGHT_ENABLED = true;//OK
     public static final boolean CONFIG_SOUND_ENABLED = true;//OK
-    public static final boolean CONFIG_GRACE_PERIOD_ENABLED = false;//OK
+    public static final boolean CONFIG_GRACE_PERIOD_ENABLED = false;//OK//TODO Elminar cuando se borre todo el código relacionado.
 
     //AJUSTES ADJUNTOS
-    public static final boolean CONFIG_FILES_ENABLED = true;
-    public static final boolean CONFIG_COMPRESSION_ENABLED = true;
-    public static final boolean CONFIG_QUICK_SHARE_ENABLED = true;
+    public static final boolean CONFIG_FILES_ENABLED = true;//OK
+    public static final boolean CONFIG_COMPRESSION_ENABLED = true;//OK
 
     //AJUSTES PANTALLA
     public static final boolean CONFIG_THEME_ENABLED = false;
