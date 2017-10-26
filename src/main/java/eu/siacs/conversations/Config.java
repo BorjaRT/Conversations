@@ -191,7 +191,7 @@ public final class Config {
     public static final boolean CONFIG_GREEN_BACKGROUND_ENABLED = true;
     public static final boolean CONFIG_FONT_SIZE_ENABLED = true;
     public static final boolean CONFIG_SEND_INDICATE_STATUS_ENABLED = false;//OK
-    public static final boolean CONFIG_QUICK_ACTION_ENABLED = true;
+    public static final boolean CONFIG_QUICK_ACTION_ENABLED = false;//OK
     public static final boolean CONFIG_DINAMIC_TAGS_ENABLED = false;//OK
 
     //AJUSTES AVANZADO
