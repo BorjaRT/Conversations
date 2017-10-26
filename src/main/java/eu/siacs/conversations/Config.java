@@ -179,7 +179,6 @@ public final class Config {
     public static final boolean CONFIG_VIBRATION_ENABLED = true;
     public static final boolean CONFIG_LIGHT_ENABLED = true;
     public static final boolean CONFIG_SOUND_ENABLED = true;
-    public static final boolean CONFIG_SILENCE_ENABLED = true;
     public static final boolean CONFIG_GRACE_PERIOD_ENABLED = true;
 
     //AJUSTES ADJUNTOS

@@ -94,22 +94,6 @@ public class NotificationService {
 		return mXmppConnectionService.getBooleanPreference("notifications_from_strangers",R.bool.notifications_from_strangers);
 	}
 
-	public boolean isQuietHours() {
-		if (!mXmppConnectionService.getBooleanPreference("enable_quiet_hours", R.bool.enable_quiet_hours)) {
-			return false;
-		}
-		final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mXmppConnectionService);
-		final long startTime = preferences.getLong("quiet_hours_start", TimePreference.DEFAULT_VALUE) % Config.MILLISECONDS_IN_DAY;
-		final long endTime = preferences.getLong("quiet_hours_end", TimePreference.DEFAULT_VALUE) % Config.MILLISECONDS_IN_DAY;
-		final long nowTime = Calendar.getInstance().getTimeInMillis() % Config.MILLISECONDS_IN_DAY;
-
-		if (endTime < startTime) {
-			return nowTime > startTime || nowTime < endTime;
-		} else {
-			return nowTime > startTime && nowTime < endTime;
-		}
-	}
-
 	public void pushFromBacklog(final Message message) {
 		if (notify(message)) {
 			synchronized (notifications) {
@@ -287,7 +271,7 @@ public class NotificationService {
 		final boolean vibrate = preferences.getBoolean("vibrate_on_notification", resources.getBoolean(R.bool.vibrate_on_notification));
 		final boolean led = preferences.getBoolean("led", resources.getBoolean(R.bool.led));
 		final boolean headsup = preferences.getBoolean("notification_headsup", resources.getBoolean(R.bool.headsup_notifications));
-		if (notify && !isQuietHours()) {
+		if (notify) {
 			if (vibrate) {
 				final int dat = 70;
 				final long[] pattern = {0, 3 * dat, dat, dat};

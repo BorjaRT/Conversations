@@ -154,10 +154,6 @@ public class SettingsFragment extends PreferenceFragment {
                 ringtonePreference = (RingtonePreference) findPreference(getString(R.string.key_notification_ringtone));
                 preferenceCategory.removePreference(ringtonePreference);
             }
-            if(!Config.CONFIG_SILENCE_ENABLED){
-                preferenceScreenHours = (PreferenceScreen) findPreference(getString(R.string.key_quiet_hours));
-                preferenceCategory.removePreference(preferenceScreenHours);
-            }
             if(!Config.CONFIG_GRACE_PERIOD_ENABLED){
                 listPreference = (ListPreference) findPreference(getString(R.string.key_grace_period_length));
                 preferenceCategory.removePreference(listPreference);
