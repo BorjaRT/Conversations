@@ -134,7 +134,7 @@ public class SettingsFragment extends PreferenceFragment {
                 checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_show_notification));
                 preferenceCategory.removePreference(checkBoxPreference);
             }
-            if(!Config.CONFIG_NOTIFICATIONS_STRANGERS){
+            if(!Config.CONFIG_NOTIFICATIONS_STRANGERS_ENABLED){
                 checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_notifications_from_strangers));
                 preferenceCategory.removePreference(checkBoxPreference);
             }
