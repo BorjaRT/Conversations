@@ -176,10 +176,10 @@ public final class Config {
     public static final boolean CONFIG_NOTIFICATIONS_ENABLED = false;//OK
     public static final boolean CONFIG_NOTIFICATIONS_STRANGERS_ENABLED = false;//OK
     public static final boolean CONFIG_NOTIFICATIONS_HEADSUP_ENABLED = false;//OK
-    public static final boolean CONFIG_VIBRATION_ENABLED = true;
-    public static final boolean CONFIG_LIGHT_ENABLED = true;
-    public static final boolean CONFIG_SOUND_ENABLED = true;
-    public static final boolean CONFIG_GRACE_PERIOD_ENABLED = true;
+    public static final boolean CONFIG_VIBRATION_ENABLED = true;//OK
+    public static final boolean CONFIG_LIGHT_ENABLED = true;//OK
+    public static final boolean CONFIG_SOUND_ENABLED = true;//OK
+    public static final boolean CONFIG_GRACE_PERIOD_ENABLED = false;//OK
 
     //AJUSTES ADJUNTOS
     public static final boolean CONFIG_FILES_ENABLED = true;
