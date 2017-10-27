@@ -26,7 +26,7 @@
     <string name="quick_action">none</string>
     <bool name="show_dynamic_tags">false</bool>
     <bool name="btbv">true</bool>
-    <integer name="automatic_message_deletion">0</integer>
+    <integer name="automatic_message_deletion">86400</integer>
     <bool name="dont_trust_system_cas">false</bool>
     <bool name="allow_message_correction">true</bool>
     <bool name="use_tor">false</bool>
