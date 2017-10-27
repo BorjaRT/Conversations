@@ -258,12 +258,12 @@
             <PreferenceCategory
                 android:key="@string/key_other_options"
                 android:title="@string/pref_expert_options_other">
-                <CheckBoxPreference
-                    android:key="@string/key_autojoin"
-                    android:defaultValue="@bool/autojoin"
-                    android:title="@string/pref_autojoin"
-                    android:summary="@string/pref_autojoin_summary"
-                    />
+                <!--<CheckBoxPreference-->
+                    <!--android:key="@string/key_autojoin"-->
+                    <!--android:defaultValue="@bool/autojoin"-->
+                    <!--android:title="@string/pref_autojoin"-->
+                    <!--android:summary="@string/pref_autojoin_summary"-->
+                    <!--/>-->
                 <CheckBoxPreference
                     android:defaultValue="@bool/indicate_received"
                     android:key="@string/key_indicate_received"

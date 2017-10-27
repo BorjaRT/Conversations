@@ -306,10 +306,10 @@ public class SettingsFragment extends PreferenceFragment {
             if(!Config.CONFIG_SUB_OTHER_ENABLED ){
                 advancedPreferences.removePreference(prefOther);
             }else{
-                if(!Config.CONFIG_AUTOJOIN_ENABLED){
-                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_autojoin));
-                    prefSecurity.removePreference(checkBoxPreference);
-                }
+//                if(!Config.CONFIG_AUTOJOIN_ENABLED){
+//                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_autojoin));
+//                    prefSecurity.removePreference(checkBoxPreference);
+//                }
                 if(!Config.CONFIG_INDICATE_RECEIVED_ENABLED){
                     checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_indicate_received));
                     prefSecurity.removePreference(checkBoxPreference);

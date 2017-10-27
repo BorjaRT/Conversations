@@ -51,7 +51,7 @@
     <string translatable="false" name="key_dnd_on_silent_mode">dnd_on_silent_mode</string>
     <string translatable="false" name="key_treat_vibrate_as_silent">treat_vibrate_as_silent</string>
     <string translatable="false" name="key_other_options">other_options</string>
-    <string translatable="false" name="key_autojoin">autojoin</string>
+    <!--<string translatable="false" name="key_autojoin">autojoin</string>-->
     <string translatable="false" name="key_indicate_received">indicate_received</string>
     <string translatable="false" name="key_enable_foreground_service">enable_foreground_service</string>
     <string translatable="false" name="key_never_send">never_send</string>

@@ -361,7 +361,8 @@ public class StartConversationActivity extends XmppActivity implements OnRosterU
         }
         Conversation conversation = xmppConnectionService.findOrCreateConversation(bookmark.getAccount(), jid, true, true, true);
         conversation.setBookmark(bookmark);
-        if (!bookmark.autojoin() && getPreferences().getBoolean("autojoin", getResources().getBoolean(R.bool.autojoin))) {
+//        if (!bookmark.autojoin() && getPreferences().getBoolean("autojoin", getResources().getBoolean(R.bool.autojoin))) {
+        if (!bookmark.autojoin()) {
             bookmark.setAutojoin(true);
             xmppConnectionService.pushBookmarks(bookmark.getAccount());
         }
@@ -507,7 +508,8 @@ public class StartConversationActivity extends XmppActivity implements OnRosterU
                                 jid.setError(getString(R.string.bookmark_already_exists));
                             } else {
                                 final Bookmark bookmark = new Bookmark(account, conferenceJid.toBareJid());
-                                bookmark.setAutojoin(getPreferences().getBoolean("autojoin", getResources().getBoolean(R.bool.autojoin)));
+//                                bookmark.setAutojoin(getPreferences().getBoolean("autojoin", getResources().getBoolean(R.bool.autojoin)));
+                                bookmark.setAutojoin(true);
                                 String nick = conferenceJid.getResourcepart();
                                 if (nick != null && !nick.isEmpty()) {
                                     bookmark.setNick(nick);

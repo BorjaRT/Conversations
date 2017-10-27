@@ -220,8 +220,8 @@ public final class Config {
 	public static final boolean CONFIG_DND_SILENT_ENABLED = false;//OK
 	public static final boolean CONFIG_VIBRATE_SILENT_ENABLED = false;//OK
 
-	public static final boolean CONFIG_SUB_OTHER_ENABLED = true;
-	public static final boolean CONFIG_AUTOJOIN_ENABLED = true;
+	public static final boolean CONFIG_SUB_OTHER_ENABLED = false;
+//	public static final boolean CONFIG_AUTOJOIN_ENABLED = true;
 	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = false;
 	public static final boolean CONFIG_FOREGROUND_SERVICE_ENABLED = false;
 
