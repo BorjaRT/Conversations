@@ -207,11 +207,11 @@
                     android:key="@string/key_use_tor"
                     android:summary="@string/pref_use_tor_summary"
                     android:title="@string/pref_use_tor"/>
-                <CheckBoxPreference
-                    android:defaultValue="@bool/show_connection_options"
-                    android:key="@string/key_show_connection_options"
-                    android:summary="@string/pref_show_connection_options_summary"
-                    android:title="@string/pref_show_connection_options"/>
+                <!--<CheckBoxPreference-->
+                    <!--android:defaultValue="@bool/show_connection_options"-->
+                    <!--android:key="@string/key_show_connection_options"-->
+                    <!--android:summary="@string/pref_show_connection_options_summary"-->
+                    <!--android:title="@string/pref_show_connection_options"/>-->
             </PreferenceCategory>
             <PreferenceCategory
                 android:key="@string/key_input_options"

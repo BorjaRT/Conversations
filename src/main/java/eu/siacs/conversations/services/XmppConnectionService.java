@@ -3245,9 +3245,9 @@ public class XmppConnectionService extends Service {
 		return Config.FORCE_ORBOT || getBooleanPreference("use_tor", R.bool.use_tor);
 	}
 
-	public boolean showExtendedConnectionOptions() {
-		return getBooleanPreference("show_connection_options", R.bool.show_connection_options);
-	}
+//	public boolean showExtendedConnectionOptions() {
+//		return getBooleanPreference("show_connection_options", R.bool.show_connection_options);
+//	}
 
 	public boolean broadcastLastActivity() {
 		return getBooleanPreference(SettingsActivity.BROADCAST_LAST_ACTIVITY, R.bool.last_activity);

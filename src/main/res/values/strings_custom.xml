@@ -41,7 +41,7 @@
     <string translatable="false" name="key_delete_omemo_identities">delete_omemo_identities</string>
     <string translatable="false" name="key_connection_options">connection_options</string>
     <string translatable="false" name="key_use_tor">use_tor</string>
-    <string translatable="false" name="key_show_connection_options">show_connection_options</string>
+    <!--<string translatable="false" name="key_show_connection_options">show_connection_options</string>-->
     <string translatable="false" name="key_input_options">input_options</string>
     <string translatable="false" name="key_enter_is_send">enter_is_send</string>
     <string translatable="false" name="key_display_enter_key">display_enter_key</string>

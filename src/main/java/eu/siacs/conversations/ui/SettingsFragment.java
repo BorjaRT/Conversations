@@ -263,10 +263,10 @@ public class SettingsFragment extends PreferenceFragment {
                     checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_use_tor));
                     prefSecurity.removePreference(checkBoxPreference);
                 }
-                if(!Config.CONFIG_CONNECTION_OPTIONS_ENABLED){
-                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_show_connection_options));
-                    prefSecurity.removePreference(checkBoxPreference);
-                }
+//                if(!Config.CONFIG_CONNECTION_OPTIONS_ENABLED){
+//                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_show_connection_options));
+//                    prefSecurity.removePreference(checkBoxPreference);
+//                }
             }
 
             if(!Config.CONFIG_SUB_INPUT_ENABLED){

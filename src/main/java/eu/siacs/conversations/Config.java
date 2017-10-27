@@ -208,7 +208,7 @@ public final class Config {
 
 	public static final boolean CONFIG_SUB_CONNECTION_ENABLED = true;
 	public static final boolean CONFIG_USE_TOR_ENABLED = true;
-	public static final boolean CONFIG_CONNECTION_OPTIONS_ENABLED = false;//OK
+//	public static final boolean CONFIG_CONNECTION_OPTIONS_ENABLED = false;//OK
 
 	public static final boolean CONFIG_SUB_INPUT_ENABLED = false;//OK
 	public static final boolean CONFIG_ENTER_SEND_ENABLED = false;//OK
