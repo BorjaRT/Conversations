@@ -38,6 +38,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.json.JSONException;
 
 import eu.siacs.conversations.Config;
+import eu.siacs.conversations.application.CustomApplication;
 import eu.siacs.conversations.crypto.axolotl.AxolotlService;
 import eu.siacs.conversations.crypto.axolotl.FingerprintStatus;
 import eu.siacs.conversations.crypto.axolotl.SQLiteAxolotlStore;
@@ -730,11 +731,20 @@ public class DatabaseBackend extends SQLiteOpenHelper {
 				Conversation.UUID + "=?", args);
 	}
 
+    public List<Account> getAccounts(CustomApplication application){
+        List<Account> list = new ArrayList<>();
+        if(application.getUserAccount()!=null){
+            list.add(application.getUserAccount());
+        }
+        return list;
+    }
+
 	public List<Account> getAccounts() {
 		SQLiteDatabase db = this.getReadableDatabase();
 		return getAccounts(db);
 	}
 
+    //TODO Sólo se usa en el método que actualiza la base de datos. Eliminar toda referencia a la tabla ACCOUNTS
 	private List<Account> getAccounts(SQLiteDatabase db) {
 		List<Account> list = new ArrayList<>();
 		Cursor cursor = db.query(Account.TABLENAME, null, null, null, null,

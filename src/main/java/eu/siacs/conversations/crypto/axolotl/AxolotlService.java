@@ -550,6 +550,7 @@ public class AxolotlService implements OnAdvancedStreamFeaturesLoaded {
 						Log.d(Config.LOGTAG,account.getJid().toBareJid()+": done changing access mode");
 						account.setOption(Account.OPTION_REQUIRES_ACCESS_MODE_CHANGE,false);
 						mXmppConnectionService.databaseBackend.updateAccount(account);
+						mXmppConnectionService.getCustomApplication().setUserAccount(account);
 					}
 					ownPushPending.set(false);
 					if (packet.getType() == IqPacket.TYPE.ERROR) {

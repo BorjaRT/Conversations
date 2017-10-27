@@ -120,6 +120,7 @@ public class SQLiteAxolotlStore implements SignalProtocolStore {
 			boolean success = this.account.setKey(JSONKEY_REGISTRATION_ID, Integer.toString(reg_id));
 			if (success) {
 				mXmppConnectionService.databaseBackend.updateAccount(account);
+				mXmppConnectionService.getCustomApplication().setUserAccount(account);
 			} else {
 				Log.e(Config.LOGTAG, AxolotlService.getLogprefix(account) + "Failed to write new key to the database!");
 			}
@@ -364,6 +365,7 @@ public class SQLiteAxolotlStore implements SignalProtocolStore {
 		boolean success = this.account.setKey(JSONKEY_CURRENT_PREKEY_ID, Integer.toString(preKeyId));
 		if (success) {
 			mXmppConnectionService.databaseBackend.updateAccount(account);
+			mXmppConnectionService.getCustomApplication().setUserAccount(account);
 		} else {
 			Log.e(Config.LOGTAG, AxolotlService.getLogprefix(account) + "Failed to write new prekey id to the database!");
 		}

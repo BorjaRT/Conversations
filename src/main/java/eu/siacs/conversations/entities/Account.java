@@ -703,4 +703,8 @@ public class Account extends AbstractEntity {
 	public boolean isOnlineAndConnected() {
 		return this.getStatus() == State.ONLINE && this.getXmppConnection() != null;
 	}
+
+	public String toString(){
+		return getUsername() + ":" + getPassword();
+	}
 }

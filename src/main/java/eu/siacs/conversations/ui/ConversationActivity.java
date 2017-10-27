@@ -1252,10 +1252,6 @@ public class ConversationActivity extends XmppActivity
 				if (Config.X509_VERIFICATION) {
 					startActivity(new Intent(this, ManageAccountActivity.class));
 				} else if (Config.MAGIC_CREATE_DOMAIN != null) {
-//					startActivity(new Intent(this, WelcomeActivity.class));
-                    
-//                    startActivity(new Intent(this, EditAccountActivity.class));
-//                    startActivity(new Intent(this, LoginActivity.class));
 					Intent loginIntent = new Intent(this, LoginActivity.class);
 					loginIntent.putExtra(INTENT_EXTRA_INIT_MODE,true);
 					startActivity(loginIntent);

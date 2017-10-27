@@ -571,6 +571,7 @@ public abstract class XmppActivity extends Activity {
 				@Override
 				public void success(Account account) {
 					xmppConnectionService.databaseBackend.updateAccount(account);
+					xmppConnectionService.getCustomApplication().setUserAccount(account);
 					xmppConnectionService.sendPresence(account);
 					if (conversation != null) {
 						conversation.setNextEncryption(Message.ENCRYPTION_PGP);
@@ -588,6 +589,7 @@ public abstract class XmppActivity extends Activity {
 						account.setPgpSignId(0);
 						account.unsetPgpSignature();
 						xmppConnectionService.databaseBackend.updateAccount(account);
+						xmppConnectionService.getCustomApplication().setUserAccount(account);
 						choosePgpSignId(account);
 					} else {
 						displayErrorDialog(error);

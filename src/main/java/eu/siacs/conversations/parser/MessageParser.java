@@ -264,6 +264,7 @@ public class MessageParser extends AbstractParser implements OnMessagePacketRece
 					if (account.getJid().toBareJid().equals(from)) {
 						if (account.setAvatar(avatar.getFilename())) {
 							mXmppConnectionService.databaseBackend.updateAccount(account);
+							mXmppConnectionService.getCustomApplication().setUserAccount(account);
 						}
 						mXmppConnectionService.getAvatarService().clear(account);
 						mXmppConnectionService.updateConversationUi();
