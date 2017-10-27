@@ -78,29 +78,6 @@
             android:ringtoneType="notification"
             android:summary="@string/pref_sound_summary"
             android:title="@string/pref_sound"/>
-        <PreferenceScreen
-            android:dependency="show_notification"
-            android:key="@string/key_quiet_hours"
-            android:summary="@string/pref_quiet_hours_summary"
-            android:title="@string/title_pref_quiet_hours">
-            <CheckBoxPreference
-                android:defaultValue="@bool/enable_quiet_hours"
-                android:key="@string/key_enable_quiet_hours"
-                android:summary="@string/pref_quiet_hours_summary"
-                android:title="@string/title_pref_enable_quiet_hours"/>
-            <eu.siacs.conversations.ui.TimePreference
-                android:dependency="enable_quiet_hours"
-                android:key="@string/key_quiet_hours_start"
-                android:negativeButtonText="@string/cancel"
-                android:positiveButtonText="@string/set"
-                android:title="@string/title_pref_quiet_hours_start_time"/>
-            <eu.siacs.conversations.ui.TimePreference
-                android:dependency="enable_quiet_hours"
-                android:key="@string/key_quiet_hours_end"
-                android:negativeButtonText="@string/cancel"
-                android:positiveButtonText="@string/set"
-                android:title="@string/title_pref_quiet_hours_end_time"/>
-        </PreferenceScreen>
         <ListPreference
             android:dependency="show_notification"
             android:key="@string/key_grace_period_length"
@@ -128,11 +105,6 @@
             android:key="@string/key_picture_compression"
             android:summary="@string/pref_picture_compression_summary"
             android:title="@string/pref_picture_compression"/>
-        <CheckBoxPreference
-            android:defaultValue="@bool/return_to_previous"
-            android:key="@string/key_return_to_previous"
-            android:title="@string/pref_return_to_previous"
-            android:summary="@string/pref_return_to_previous_summary"/>
     </PreferenceCategory>
     <PreferenceCategory
         android:key="@string/key_ui"
@@ -144,11 +116,6 @@
             android:key="@string/key_theme"
             android:summary="@string/pref_theme_options_summary"
             android:title="@string/pref_theme_options"/>
-        <CheckBoxPreference
-            android:defaultValue="@bool/use_subject"
-            android:key="@string/key_use_subject"
-            android:summary="@string/pref_conference_name_summary"
-            android:title="@string/pref_conference_name"/>
         <CheckBoxPreference
             android:defaultValue="@bool/use_green_background"
             android:key="@string/key_use_green_background"
@@ -240,11 +207,11 @@
                     android:key="@string/key_use_tor"
                     android:summary="@string/pref_use_tor_summary"
                     android:title="@string/pref_use_tor"/>
-                <CheckBoxPreference
-                    android:defaultValue="@bool/show_connection_options"
-                    android:key="@string/key_show_connection_options"
-                    android:summary="@string/pref_show_connection_options_summary"
-                    android:title="@string/pref_show_connection_options"/>
+                <!--<CheckBoxPreference-->
+                    <!--android:defaultValue="@bool/show_connection_options"-->
+                    <!--android:key="@string/key_show_connection_options"-->
+                    <!--android:summary="@string/pref_show_connection_options_summary"-->
+                    <!--android:title="@string/pref_show_connection_options"/>-->
             </PreferenceCategory>
             <PreferenceCategory
                 android:key="@string/key_input_options"
@@ -291,12 +258,12 @@
             <PreferenceCategory
                 android:key="@string/key_other_options"
                 android:title="@string/pref_expert_options_other">
-                <CheckBoxPreference
-                    android:key="@string/key_autojoin"
-                    android:defaultValue="@bool/autojoin"
-                    android:title="@string/pref_autojoin"
-                    android:summary="@string/pref_autojoin_summary"
-                    />
+                <!--<CheckBoxPreference-->
+                    <!--android:key="@string/key_autojoin"-->
+                    <!--android:defaultValue="@bool/autojoin"-->
+                    <!--android:title="@string/pref_autojoin"-->
+                    <!--android:summary="@string/pref_autojoin_summary"-->
+                    <!--/>-->
                 <CheckBoxPreference
                     android:defaultValue="@bool/indicate_received"
                     android:key="@string/key_indicate_received"
@@ -307,10 +274,6 @@
                     android:key="@string/key_enable_foreground_service"
                     android:summary="@string/pref_keep_foreground_service_summary"
                     android:title="@string/pref_keep_foreground_service"/>
-                <Preference
-                    android:key="@string/key_export_logs"
-                    android:summary="@string/pref_export_logs_summary"
-                    android:title="@string/pref_export_logs"/>
             </PreferenceCategory>
         </PreferenceScreen>
 

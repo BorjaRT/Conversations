@@ -18,18 +18,14 @@
     <string translatable="false" name="key_vibrate_on_notification">vibrate_on_notification</string>
     <string translatable="false" name="key_led">led</string>
     <string translatable="false" name="key_notification_ringtone">notification_ringtone</string>
-    <string translatable="false" name="key_quiet_hours">quiet_hours</string>
-    <string translatable="false" name="key_enable_quiet_hours">enable_quiet_hours</string>
     <string translatable="false" name="key_quiet_hours_start">quiet_hours_start</string>
     <string translatable="false" name="key_quiet_hours_end">quiet_hours_end</string>
     <string translatable="false" name="key_grace_period_length">grace_period_length</string>
     <string translatable="false" name="key_attachments">attachments</string>
     <string translatable="false" name="key_auto_accept_file_size">auto_accept_file_size</string>
     <string translatable="false" name="key_picture_compression">picture_compression</string>
-    <string translatable="false" name="key_return_to_previous">return_to_previous</string>
     <string translatable="false" name="key_ui">ui</string>
     <string translatable="false" name="key_theme">theme</string>
-    <string translatable="false" name="key_use_subject">use_subject</string>
     <string translatable="false" name="key_use_green_background">use_green_background</string>
     <string translatable="false" name="key_use_larger_font">use_larger_font</string>
     <string translatable="false" name="key_send_button_status">send_button_status</string>
@@ -49,7 +45,7 @@
     <string translatable="false" name="key_delete_omemo_identities">delete_omemo_identities</string>
     <string translatable="false" name="key_connection_options">connection_options</string>
     <string translatable="false" name="key_use_tor">use_tor</string>
-    <string translatable="false" name="key_show_connection_options">show_connection_options</string>
+    <!--<string translatable="false" name="key_show_connection_options">show_connection_options</string>-->
     <string translatable="false" name="key_input_options">input_options</string>
     <string translatable="false" name="key_enter_is_send">enter_is_send</string>
     <string translatable="false" name="key_display_enter_key">display_enter_key</string>
@@ -59,10 +55,9 @@
     <string translatable="false" name="key_dnd_on_silent_mode">dnd_on_silent_mode</string>
     <string translatable="false" name="key_treat_vibrate_as_silent">treat_vibrate_as_silent</string>
     <string translatable="false" name="key_other_options">other_options</string>
-    <string translatable="false" name="key_autojoin">autojoin</string>
+    <!--<string translatable="false" name="key_autojoin">autojoin</string>-->
     <string translatable="false" name="key_indicate_received">indicate_received</string>
     <string translatable="false" name="key_enable_foreground_service">enable_foreground_service</string>
-    <string translatable="false" name="key_export_logs">export_logs</string>
     <string translatable="false" name="key_never_send">never_send</string>
     <string translatable="false" name="key_about">about</string>
 </resources>

@@ -363,7 +363,8 @@ public class ConversationActivity extends XmppActivity
 				if ((ab.getDisplayOptions() & ActionBar.DISPLAY_HOME_AS_UP) != ActionBar.DISPLAY_HOME_AS_UP) {
 					ab.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_TITLE);
 				}
-				if (conversation.getMode() == Conversation.MODE_SINGLE || useSubjectToIdentifyConference()) {
+				if (conversation.getMode() == Conversation.MODE_SINGLE) {
+//				if (conversation.getMode() == Conversation.MODE_SINGLE || useSubjectToIdentifyConference()) {
 					ab.setTitle(conversation.getName());
 				} else {
 					ab.setTitle(conversation.getJid().toBareJid().toString());

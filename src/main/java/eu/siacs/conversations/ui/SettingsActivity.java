@@ -31,7 +31,6 @@ import de.duenndns.ssl.MemorizingTrustManager;
 import eu.siacs.conversations.Config;
 import eu.siacs.conversations.R;
 import eu.siacs.conversations.entities.Account;
-import eu.siacs.conversations.services.ExportLogsService;
 import eu.siacs.conversations.xmpp.XmppConnection;
 import eu.siacs.conversations.xmpp.jid.InvalidJidException;
 import eu.siacs.conversations.xmpp.jid.Jid;
@@ -177,17 +176,6 @@ public class SettingsActivity extends XmppActivity implements
 				AlertDialog removeCertsDialog = dialogBuilder.create();
 				removeCertsDialog.show();
 				removeCertsDialog.getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
-				return true;
-			}
-		});
-
-		final Preference exportLogsPreference = mSettingsFragment.findPreference("export_logs");
-		exportLogsPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				if (hasStoragePermission(REQUEST_WRITE_LOGS)) {
-					startExport();
-				}
 				return true;
 			}
 		});
@@ -386,17 +374,9 @@ public class SettingsActivity extends XmppActivity implements
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 		if (grantResults.length > 0)
-			if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				if (requestCode == REQUEST_WRITE_LOGS) {
-					startExport();
-				}
-			} else {
+			if (!(grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
 				Toast.makeText(this, R.string.no_storage_permission, Toast.LENGTH_SHORT).show();
 			}
-	}
-
-	private void startExport() {
-		startService(new Intent(getApplicationContext(), ExportLogsService.class));
 	}
 
 	private void displayToast(final String msg) {

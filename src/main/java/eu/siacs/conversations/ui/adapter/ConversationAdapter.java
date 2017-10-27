@@ -52,7 +52,8 @@ public class ConversationAdapter extends ArrayAdapter<Conversation> {
 			swipeableItem.setBackgroundColor(c);
 		}
 		TextView convName = (TextView) view.findViewById(R.id.conversation_name);
-		if (conversation.getMode() == Conversation.MODE_SINGLE || activity.useSubjectToIdentifyConference()) {
+		if (conversation.getMode() == Conversation.MODE_SINGLE) {
+//		if (conversation.getMode() == Conversation.MODE_SINGLE || activity.useSubjectToIdentifyConference()) {
 			convName.setText(conversation.getName());
 		} else {
 			convName.setText(conversation.getJid().toBareJid().toString());

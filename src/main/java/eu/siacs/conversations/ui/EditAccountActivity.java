@@ -675,7 +675,8 @@ public class EditAccountActivity extends OmemoActivity implements OnAccountUpdat
 		}
 		SharedPreferences preferences = getPreferences();
 		boolean useTor = Config.FORCE_ORBOT || preferences.getBoolean("use_tor", false);
-		this.mShowOptions = useTor || preferences.getBoolean("show_connection_options", false);
+//		this.mShowOptions = useTor || preferences.getBoolean("show_connection_options", false);
+		this.mShowOptions = useTor;
 		mHostname.setHint(useTor ? R.string.hostname_or_onion : R.string.hostname_example);
 		this.mNamePort.setVisibility(mShowOptions ? View.VISIBLE : View.GONE);
 	}

@@ -788,7 +788,8 @@ public class XmppConnectionService extends Service {
 	}
 
 	private boolean manuallyChangePresence() {
-		return getBooleanPreference(SettingsActivity.MANUALLY_CHANGE_PRESENCE, R.bool.manually_change_presence);
+		return true;
+//		return getBooleanPreference(SettingsActivity.MANUALLY_CHANGE_PRESENCE, R.bool.manually_change_presence);
 	}
 
 	private boolean treatVibrateAsSilent() {
@@ -1336,7 +1337,7 @@ public class XmppConnectionService extends Service {
 					final Element query = packet.query();
 					final HashMap<Jid, Bookmark> bookmarks = new HashMap<>();
 					final Element storage = query.findChild("storage", "storage:bookmarks");
-					final boolean autojoin = respectAutojoin();
+//					final boolean autojoin = respectAutojoin();
 					if (storage != null) {
 						for (final Element item : storage.getChildren()) {
 							if (item.getName().equals("conference")) {
@@ -1348,7 +1349,8 @@ public class XmppConnectionService extends Service {
 								Conversation conversation = find(bookmark);
 								if (conversation != null) {
 									conversation.setBookmark(bookmark);
-								} else if (bookmark.autojoin() && bookmark.getJid() != null && autojoin) {
+//                                } else if (bookmark.autojoin() && bookmark.getJid() != null && autojoin) {
+								} else if (bookmark.autojoin() && bookmark.getJid() != null) {
 									conversation = findOrCreateConversation(account, bookmark.getJid(), true, true, false);
 									conversation.setBookmark(bookmark);
 								}
@@ -1720,7 +1722,8 @@ public class XmppConnectionService extends Service {
 			if (conversation.getMode() == Conversation.MODE_MULTI) {
 				if (conversation.getAccount().getStatus() == Account.State.ONLINE) {
 					Bookmark bookmark = conversation.getBookmark();
-					if (bookmark != null && bookmark.autojoin() && respectAutojoin()) {
+//                    if (bookmark != null && bookmark.autojoin() && respectAutojoin()) {
+					if (bookmark != null && bookmark.autojoin()) {
 						bookmark.setAutojoin(false);
 						pushBookmarks(bookmark.getAccount());
 					}
@@ -2310,9 +2313,10 @@ public class XmppConnectionService extends Service {
 		if (conversation.getMode() == Conversation.MODE_MULTI) {
 			conversation.getMucOptions().setPassword(password);
 			if (conversation.getBookmark() != null) {
-				if (respectAutojoin()) {
-					conversation.getBookmark().setAutojoin(true);
-				}
+//				if (respectAutojoin()) {
+//					conversation.getBookmark().setAutojoin(true);
+//				}
+                conversation.getBookmark().setAutojoin(true);
 				pushBookmarks(conversation.getAccount());
 			}
 			updateConversation(conversation);
@@ -3232,9 +3236,9 @@ public class XmppConnectionService extends Service {
 		return getBooleanPreference("chat_states", R.bool.chat_states);
 	}
 
-	private boolean respectAutojoin() {
-		return getBooleanPreference("autojoin", R.bool.autojoin);
-	}
+//	private boolean respectAutojoin() {
+//		return getBooleanPreference("autojoin", R.bool.autojoin);
+//	}
 
 	public boolean indicateReceived() {
 		return getBooleanPreference("indicate_received", R.bool.indicate_received);
@@ -3244,9 +3248,9 @@ public class XmppConnectionService extends Service {
 		return Config.FORCE_ORBOT || getBooleanPreference("use_tor", R.bool.use_tor);
 	}
 
-	public boolean showExtendedConnectionOptions() {
-		return getBooleanPreference("show_connection_options", R.bool.show_connection_options);
-	}
+//	public boolean showExtendedConnectionOptions() {
+//		return getBooleanPreference("show_connection_options", R.bool.show_connection_options);
+//	}
 
 	public boolean broadcastLastActivity() {
 		return getBooleanPreference(SettingsActivity.BROADCAST_LAST_ACTIVITY, R.bool.last_activity);
@@ -3860,7 +3864,8 @@ public class XmppConnectionService extends Service {
 		if (name != null && !name.trim().isEmpty()) {
 			bookmark.setBookmarkName(name.trim());
 		}
-		bookmark.setAutojoin(getPreferences().getBoolean("autojoin",getResources().getBoolean(R.bool.autojoin)));
+//		bookmark.setAutojoin(getPreferences().getBoolean("autojoin",getResources().getBoolean(R.bool.autojoin)));
+		bookmark.setAutojoin(true);
 		account.getBookmarks().add(bookmark);
 		pushBookmarks(account);
 		conversation.setBookmark(bookmark);

@@ -12,8 +12,9 @@ public class AboutActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Boolean dark = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
-                        .getString("theme", "light").equals("dark");
+//        Boolean dark = PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
+//                        .getString("theme", "light").equals("dark");
+        Boolean dark = true;
         int mTheme = dark ? R.style.ConversationsTheme_Dark : R.style.ConversationsTheme;
         setTheme(mTheme);
 

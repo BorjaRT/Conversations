@@ -108,7 +108,7 @@ public abstract class XmppActivity extends Activity {
 	protected int mColorGreen;
 	protected int mPrimaryColor;
 
-	protected boolean mUseSubject = true;
+//	protected boolean mUseSubject = true;
 
 	private DisplayMetrics metrics;
 	protected int mTheme;
@@ -406,7 +406,7 @@ public abstract class XmppActivity extends Activity {
 		setTheme(this.mTheme);
 
 		this.mUsingEnterKey = usingEnterKey();
-		mUseSubject = getPreferences().getBoolean("use_subject", getResources().getBoolean(R.bool.use_subject));
+//		mUseSubject = getPreferences().getBoolean("use_subject", getResources().getBoolean(R.bool.use_subject));
 		final ActionBar ab = getActionBar();
 		if (ab!=null) {
 			ab.setDisplayHomeAsUpEnabled(true);
@@ -455,9 +455,9 @@ public abstract class XmppActivity extends Activity {
 			.getDefaultSharedPreferences(getApplicationContext());
 	}
 
-	public boolean useSubjectToIdentifyConference() {
-		return mUseSubject;
-	}
+//	public boolean useSubjectToIdentifyConference() {
+//		return mUseSubject;
+//	}
 
 	public void switchToConversation(Conversation conversation) {
 		switchToConversation(conversation, null, false);
@@ -991,7 +991,8 @@ public abstract class XmppActivity extends Activity {
 	}
 
 	protected boolean manuallyChangePresence() {
-		return getPreferences().getBoolean(SettingsActivity.MANUALLY_CHANGE_PRESENCE, getResources().getBoolean(R.bool.manually_change_presence));
+		return true;
+//		return getPreferences().getBoolean(SettingsActivity.MANUALLY_CHANGE_PRESENCE, getResources().getBoolean(R.bool.manually_change_presence));
 	}
 
 	protected void unregisterNdefPushMessageCallback() {
@@ -1044,7 +1045,8 @@ public abstract class XmppActivity extends Activity {
 	}
 
 	protected int findTheme() {
-		Boolean dark   = getPreferences().getString(SettingsActivity.THEME, getResources().getString(R.string.theme)).equals("dark");
+//		Boolean dark   = getPreferences().getString(SettingsActivity.THEME, getResources().getString(R.string.theme)).equals("dark");
+		Boolean dark   = true;
 		Boolean larger = getPreferences().getBoolean("use_larger_font", getResources().getBoolean(R.bool.use_larger_font));
 
 		if(dark) {

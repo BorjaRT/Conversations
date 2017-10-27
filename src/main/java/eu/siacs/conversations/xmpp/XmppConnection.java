@@ -278,7 +278,8 @@ public class XmppConnection implements Runnable {
 			shouldAuthenticate = needsBinding = !account.isOptionSet(Account.OPTION_REGISTER);
 			this.changeStatus(Account.State.CONNECTING);
 			final boolean useTor = mXmppConnectionService.useTorToConnect() || account.isOnion();
-			final boolean extended = mXmppConnectionService.showExtendedConnectionOptions();
+//			final boolean extended = mXmppConnectionService.showExtendedConnectionOptions();
+			final boolean extended = false;
 			if (useTor) {
 				String destination;
 				if (account.getHostname().isEmpty()) {

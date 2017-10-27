@@ -198,7 +198,6 @@
         </activity>
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
 
-        <service android:name=".services.ExportLogsService" />
         <service
             android:name=".services.ContactChooserTargetService"
             android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">

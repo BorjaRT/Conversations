@@ -134,7 +134,7 @@ public class SettingsFragment extends PreferenceFragment {
                 checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_show_notification));
                 preferenceCategory.removePreference(checkBoxPreference);
             }
-            if(!Config.CONFIG_NOTIFICATIONS_STRANGERS){
+            if(!Config.CONFIG_NOTIFICATIONS_STRANGERS_ENABLED){
                 checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_notifications_from_strangers));
                 preferenceCategory.removePreference(checkBoxPreference);
             }
@@ -154,10 +154,6 @@ public class SettingsFragment extends PreferenceFragment {
                 ringtonePreference = (RingtonePreference) findPreference(getString(R.string.key_notification_ringtone));
                 preferenceCategory.removePreference(ringtonePreference);
             }
-            if(!Config.CONFIG_SILENCE_ENABLED){
-                preferenceScreenHours = (PreferenceScreen) findPreference(getString(R.string.key_quiet_hours));
-                preferenceCategory.removePreference(preferenceScreenHours);
-            }
             if(!Config.CONFIG_GRACE_PERIOD_ENABLED){
                 listPreference = (ListPreference) findPreference(getString(R.string.key_grace_period_length));
                 preferenceCategory.removePreference(listPreference);
@@ -176,10 +172,6 @@ public class SettingsFragment extends PreferenceFragment {
                 listPreference = (ListPreference) findPreference(getString(R.string.key_picture_compression));
                 preferenceCategory.removePreference(listPreference);
             }
-            if(!Config.CONFIG_QUICK_SHARE_ENABLED){
-                checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_return_to_previous));
-                preferenceCategory.removePreference(checkBoxPreference);
-            }
         }
 
         preferenceCategory = (PreferenceCategory) findPreference(getString(R.string.key_ui));
@@ -189,10 +181,6 @@ public class SettingsFragment extends PreferenceFragment {
             if(!Config.CONFIG_THEME_ENABLED){
                 listPreference = (ListPreference) findPreference(getString(R.string.key_theme));
                 preferenceCategory.removePreference(listPreference);
-            }
-            if(!Config.CONFIG_NAME_IN_GROUP_ENABLED){
-                checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_use_subject));
-                preferenceCategory.removePreference(checkBoxPreference);
             }
             if(!Config.CONFIG_GREEN_BACKGROUND_ENABLED){
                 checkBoxPreference = (CheckBoxPreference) findPreference(getString(R.string.key_use_green_background));
@@ -275,10 +263,10 @@ public class SettingsFragment extends PreferenceFragment {
                     checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_use_tor));
                     prefSecurity.removePreference(checkBoxPreference);
                 }
-                if(!Config.CONFIG_CONNECTION_OPTIONS_ENABLED){
-                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_show_connection_options));
-                    prefSecurity.removePreference(checkBoxPreference);
-                }
+//                if(!Config.CONFIG_CONNECTION_OPTIONS_ENABLED){
+//                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_show_connection_options));
+//                    prefSecurity.removePreference(checkBoxPreference);
+//                }
             }
 
             if(!Config.CONFIG_SUB_INPUT_ENABLED){
@@ -318,10 +306,10 @@ public class SettingsFragment extends PreferenceFragment {
             if(!Config.CONFIG_SUB_OTHER_ENABLED ){
                 advancedPreferences.removePreference(prefOther);
             }else{
-                if(!Config.CONFIG_AUTOJOIN_ENABLED){
-                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_autojoin));
-                    prefSecurity.removePreference(checkBoxPreference);
-                }
+//                if(!Config.CONFIG_AUTOJOIN_ENABLED){
+//                    checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_autojoin));
+//                    prefSecurity.removePreference(checkBoxPreference);
+//                }
                 if(!Config.CONFIG_INDICATE_RECEIVED_ENABLED){
                     checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_indicate_received));
                     prefSecurity.removePreference(checkBoxPreference);
@@ -329,10 +317,6 @@ public class SettingsFragment extends PreferenceFragment {
                 if(!Config.CONFIG_FOREGROUND_SERVICE_ENABLED){
                     checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_enable_foreground_service));
                     prefSecurity.removePreference(checkBoxPreference);
-                }
-                if(!Config.CONFIG_EXPORT_LOGS_ENABLED){
-                    preference = advancedPreferences.findPreference(getString(R.string.key_export_logs));
-                    prefSecurity.removePreference(preference);
                 }
             }
 

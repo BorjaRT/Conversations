@@ -161,80 +161,77 @@ public final class Config {
     public static final boolean ACCESS_ACCOUNT_MANAGEMENT = true;
 
     //AJUSTES
-    public static final boolean CONFIG_GROUP_GENERAL_ENABLED = true;
-    public static final boolean CONFIG_GROUP_PRIVACY_ENABLED = true;
-    public static final boolean CONFIG_GROUP_NOTIFICATIONS_ENABLED = true;
+    public static final boolean CONFIG_GROUP_GENERAL_ENABLED = false;//OK
+    public static final boolean CONFIG_GROUP_PRIVACY_ENABLED = false;//OK
+    public static final boolean CONFIG_GROUP_NOTIFICATIONS_ENABLED = true;//OK
     public static final boolean CONFIG_GROUP_ATTACHMENTS_ENABLED = true;
     public static final boolean CONFIG_GROUP_SCREEN_ENABLED = true;
     public static final boolean CONFIG_GROUP_ADVANCED_ENABLED = true;
-    public static final boolean CONFIG_ABOUT_ENABLED = true;
+    public static final boolean CONFIG_ABOUT_ENABLED = true;//OK
 
     //AJUSTES GENERAL
-    public static final boolean CONFIG_PRESENCE_UPDATES_ENABLED = true;
-    public static final boolean CONFIG_RESOURCE_ENABLED = true;
+    public static final boolean CONFIG_PRESENCE_UPDATES_ENABLED = false;//OK
+    public static final boolean CONFIG_RESOURCE_ENABLED = false;//OK
 
     //AJUSTES PRIVACIDAD
-    public static final boolean CONFIG_CONFIRM_MESSAGES_ENABLED = true;
-    public static final boolean CONFIG_CHAT_STATES_ENABLED = true;
-    public static final boolean CONFIG_BROADCAST_ACTIVITY_ENABLED = true;
+    public static final boolean CONFIG_CONFIRM_MESSAGES_ENABLED = false;//OK
+    public static final boolean CONFIG_CHAT_STATES_ENABLED = false;//OK
+    public static final boolean CONFIG_BROADCAST_ACTIVITY_ENABLED = false;//OK
 
     //AJUSTES NOTIFICACIONES
-    public static final boolean CONFIG_NOTIFICATIONS_ENABLED = true;
-    public static final boolean CONFIG_NOTIFICATIONS_STRANGERS = true;
-    public static final boolean CONFIG_NOTIFICATIONS_HEADSUP_ENABLED = true;
-    public static final boolean CONFIG_VIBRATION_ENABLED = true;
-    public static final boolean CONFIG_LIGHT_ENABLED = true;
-    public static final boolean CONFIG_SOUND_ENABLED = true;
-    public static final boolean CONFIG_SILENCE_ENABLED = true;
-    public static final boolean CONFIG_GRACE_PERIOD_ENABLED = true;
+    public static final boolean CONFIG_NOTIFICATIONS_ENABLED = false;//OK
+    public static final boolean CONFIG_NOTIFICATIONS_STRANGERS_ENABLED = false;//OK
+    public static final boolean CONFIG_NOTIFICATIONS_HEADSUP_ENABLED = false;//OK
+    public static final boolean CONFIG_VIBRATION_ENABLED = true;//OK
+    public static final boolean CONFIG_LIGHT_ENABLED = true;//OK
+    public static final boolean CONFIG_SOUND_ENABLED = true;//OK
+    public static final boolean CONFIG_GRACE_PERIOD_ENABLED = false;//OK//TODO Elminar cuando se borre todo el código relacionado.
 
     //AJUSTES ADJUNTOS
-    public static final boolean CONFIG_FILES_ENABLED = true;
-    public static final boolean CONFIG_COMPRESSION_ENABLED = true;
-    public static final boolean CONFIG_QUICK_SHARE_ENABLED = true;
+    public static final boolean CONFIG_FILES_ENABLED = true;//OK
+    public static final boolean CONFIG_COMPRESSION_ENABLED = true;//OK
 
     //AJUSTES PANTALLA
-    public static final boolean CONFIG_THEME_ENABLED = true;
+    public static final boolean CONFIG_THEME_ENABLED = false;
     public static final boolean CONFIG_NAME_IN_GROUP_ENABLED = true;
-    public static final boolean CONFIG_GREEN_BACKGROUND_ENABLED = true;
-    public static final boolean CONFIG_FONT_SIZE_ENABLED = true;
-    public static final boolean CONFIG_SEND_INDICATE_STATUS_ENABLED = true;
-    public static final boolean CONFIG_QUICK_ACTION_ENABLED = true;
-    public static final boolean CONFIG_DINAMIC_TAGS_ENABLED = true;
+    public static final boolean CONFIG_GREEN_BACKGROUND_ENABLED = false;//OK
+    public static final boolean CONFIG_FONT_SIZE_ENABLED = true;//OK
+    public static final boolean CONFIG_SEND_INDICATE_STATUS_ENABLED = false;//OK
+    public static final boolean CONFIG_QUICK_ACTION_ENABLED = false;//OK
+    public static final boolean CONFIG_DINAMIC_TAGS_ENABLED = false;//OK
 
     //AJUSTES AVANZADO
 	public static final boolean CONFIG_SUB_SECURITY_ENABLED = true;
-	public static final boolean CONFIG_BLIND_TRUST_ENABLED = true;
+	public static final boolean CONFIG_BLIND_TRUST_ENABLED = false;//OK
 	public static final boolean CONFIG_AUTO_MESSAGE_DELETION_ENABLED = true;
-	public static final boolean CONFIG_DONT_TRUST_CAS_ENABLED = true;
-	public static final boolean CONFIG_VALIDATE_HOSTNAME_ENABLED = true;
+	public static final boolean CONFIG_DONT_TRUST_CAS_ENABLED = false;//OK
+	public static final boolean CONFIG_VALIDATE_HOSTNAME_ENABLED = false;//OK
 	public static final boolean CONFIG_REMOVE_CERT_ENABLED = true;
-	public static final boolean CONFIG_MESSAGE_CORRECTION_ENABLED = true;
+	public static final boolean CONFIG_MESSAGE_CORRECTION_ENABLED = false;//OK
 	public static final boolean CONFIG_CLEAN_CACHE_ENABLED = true;
 	public static final boolean CONFIG_PRIVATE_STORAGE_ENABLED = true;
 	public static final boolean CONFIG_DELETE_OMEMO_ENABLED = false;
 
 	public static final boolean CONFIG_SUB_CONNECTION_ENABLED = true;
 	public static final boolean CONFIG_USE_TOR_ENABLED = true;
-	public static final boolean CONFIG_CONNECTION_OPTIONS_ENABLED = true;
+//	public static final boolean CONFIG_CONNECTION_OPTIONS_ENABLED = false;//OK
 
-	public static final boolean CONFIG_SUB_INPUT_ENABLED = true;
-	public static final boolean CONFIG_ENTER_SEND_ENABLED = true;
-	public static final boolean CONFIG_DISPLAY_ENTER_ENABLED = true;
+	public static final boolean CONFIG_SUB_INPUT_ENABLED = false;//OK
+	public static final boolean CONFIG_ENTER_SEND_ENABLED = false;//OK
+	public static final boolean CONFIG_DISPLAY_ENTER_ENABLED = false;//OK
 
-	public static final boolean CONFIG_SUB_PRESENCE_ENABLED = true;
-	public static final boolean CONFIG_MANUAL_PRESENCE_ENABLED = true;
-	public static final boolean CONFIG_AWAY_SCREEN_OFF_ENABLED = true;
-	public static final boolean CONFIG_DND_SILENT_ENABLED = true;
-	public static final boolean CONFIG_VIBRATE_SILENT_ENABLED = true;
+	public static final boolean CONFIG_SUB_PRESENCE_ENABLED = false;//OK
+	public static final boolean CONFIG_MANUAL_PRESENCE_ENABLED = false;//OK
+	public static final boolean CONFIG_AWAY_SCREEN_OFF_ENABLED = false;//OK
+	public static final boolean CONFIG_DND_SILENT_ENABLED = false;//OK
+	public static final boolean CONFIG_VIBRATE_SILENT_ENABLED = false;//OK
 
-	public static final boolean CONFIG_SUB_OTHER_ENABLED = true;
-	public static final boolean CONFIG_AUTOJOIN_ENABLED = true;
-	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = true;
-	public static final boolean CONFIG_FOREGROUND_SERVICE_ENABLED = true;
-	public static final boolean CONFIG_EXPORT_LOGS_ENABLED = false;
+	public static final boolean CONFIG_SUB_OTHER_ENABLED = false;
+//	public static final boolean CONFIG_AUTOJOIN_ENABLED = true;
+	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = false;
+	public static final boolean CONFIG_FOREGROUND_SERVICE_ENABLED = false;
 
-    public static final boolean CONFIG_SEND_ERRORS_ENABLED = true;
+    public static final boolean CONFIG_SEND_ERRORS_ENABLED = false;
 
 	private Config() {
 	}

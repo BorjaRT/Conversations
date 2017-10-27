@@ -59,7 +59,7 @@ public class MessageParser extends AbstractParser implements OnMessagePacketRece
 				c.setOutgoingChatState(state);
 				if (state == ChatState.ACTIVE || state == ChatState.COMPOSING) {
 					mXmppConnectionService.markRead(c);
-					activateGracePeriod(account);
+//					activateGracePeriod(account);
 				}
 				return false;
 			} else {
@@ -589,7 +589,7 @@ public class MessageParser extends AbstractParser implements OnMessagePacketRece
 				if (status == Message.STATUS_SEND || status == Message.STATUS_SEND_RECEIVED) {
 					mXmppConnectionService.markRead(conversation);
 					if (query == null) {
-						activateGracePeriod(account);
+//						activateGracePeriod(account);
 					}
 				} else {
 					message.markUnread();
