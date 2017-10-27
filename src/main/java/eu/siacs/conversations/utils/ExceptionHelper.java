@@ -44,7 +44,8 @@ public class ExceptionHelper {
 			final SharedPreferences preferences = PreferenceManager
 					.getDefaultSharedPreferences(activity);
             //CHECK Deshabilitado por defecto
-			boolean neverSend = preferences.getBoolean("never_send", true);
+//			boolean neverSend = preferences.getBoolean("never_send", true);
+			boolean neverSend = true;
 			if (neverSend || Config.BUG_REPORTS == null) {
 				return false;
 			}

@@ -225,7 +225,7 @@ public final class Config {
 	public static final boolean CONFIG_INDICATE_RECEIVED_ENABLED = false;
 	public static final boolean CONFIG_FOREGROUND_SERVICE_ENABLED = false;
 
-    public static final boolean CONFIG_SEND_ERRORS_ENABLED = true;
+    public static final boolean CONFIG_SEND_ERRORS_ENABLED = false;
 
 	private Config() {
 	}
