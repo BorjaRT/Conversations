@@ -54,7 +54,6 @@
     <string translatable="false" name="key_autojoin">autojoin</string>
     <string translatable="false" name="key_indicate_received">indicate_received</string>
     <string translatable="false" name="key_enable_foreground_service">enable_foreground_service</string>
-    <string translatable="false" name="key_export_logs">export_logs</string>
     <string translatable="false" name="key_never_send">never_send</string>
     <string translatable="false" name="key_about">about</string>
 </resources>

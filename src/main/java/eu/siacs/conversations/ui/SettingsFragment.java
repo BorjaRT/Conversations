@@ -318,10 +318,6 @@ public class SettingsFragment extends PreferenceFragment {
                     checkBoxPreference = (CheckBoxPreference) advancedPreferences.findPreference(getString(R.string.key_enable_foreground_service));
                     prefSecurity.removePreference(checkBoxPreference);
                 }
-                if(!Config.CONFIG_EXPORT_LOGS_ENABLED){
-                    preference = advancedPreferences.findPreference(getString(R.string.key_export_logs));
-                    prefSecurity.removePreference(preference);
-                }
             }
 
             if (!Config.CONFIG_SEND_ERRORS_ENABLED) {

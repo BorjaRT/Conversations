@@ -274,10 +274,6 @@
                     android:key="@string/key_enable_foreground_service"
                     android:summary="@string/pref_keep_foreground_service_summary"
                     android:title="@string/pref_keep_foreground_service"/>
-                <Preference
-                    android:key="@string/key_export_logs"
-                    android:summary="@string/pref_export_logs_summary"
-                    android:title="@string/pref_export_logs"/>
             </PreferenceCategory>
         </PreferenceScreen>
 
